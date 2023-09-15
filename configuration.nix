@@ -92,6 +92,8 @@
       packages = with pkgs; [
         firefox
         thunderbird
+        keepassxc
+        nextcloud-client
         jetbrains.idea-ultimate
         jetbrains.phpstorm
         jetbrains.pycharm-community
@@ -137,10 +139,11 @@
       shellAliases = {
         t-rebuild = "sudo nixos-rebuild switch -I nixos-config=/home/tilman/nixos-config/configuration.nix";
       };
-      oh-my-zsh = {
+      ohMyZsh = {
         enable = true;
+        custom = "/home/tilman/nixos-config/zsh";
         plugins = [ "git" ];
-        theme = "robbyrussel";
+        theme = "tilman";
       };
     };
 
