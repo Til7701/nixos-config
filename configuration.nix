@@ -50,6 +50,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -122,6 +124,14 @@
   environment.systemPackages = with pkgs; [
     # for use in vm
     spice-vdagent
+    
+    # gnome extensions
+    gnomeExtensions.color-picker
+    gnomeExtensions.date-menu-formatter
+    gnomeExtensions.just-perfection
+    gnomeExtensions.timezones-extension
+    gnomeExtensions.vitals
+    gnomeExtensions.appindicator
 
     # programming
     git
