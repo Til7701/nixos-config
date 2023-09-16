@@ -51,6 +51,13 @@
   services.xserver.desktopManager.gnome.enable = true;
   
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    epiphany # web browser
+    geary    # email client
+  ];
+  
+  programs.dconf.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -114,6 +121,9 @@
       userName = "Tilman Holube";
       userEmail = "tilman@holube.de";
     };
+    dconf.settings = {
+      "org/gnome/desktop/wm/preferences".button-layout = "minimize, maximize, close";
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -125,10 +135,10 @@
     spice-vdagent
     
     # gnome extensions
-    gnomeExtensions.color-picker
+    # gnomeExtensions.color-picker need a new one
     gnomeExtensions.date-menu-formatter
     gnomeExtensions.just-perfection
-    gnomeExtensions.timezones-extension
+    # gnomeExtensions.timezones-extension need a new one
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
 
