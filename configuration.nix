@@ -106,6 +106,8 @@
         jetbrains.phpstorm
         jetbrains.pycharm-community
         obsidian
+        spotify
+        discord
     ];
     };
   };
@@ -113,6 +115,7 @@
 
   home-manager.users.tilman = { pkgs, ... }: {
     home.stateVersion = "23.05";
+    imports = [ ./gnome/desktop.nix ./gnome/shell.nix ];
     home.packages = with pkgs; [
       
     ];
@@ -121,9 +124,6 @@
       userName = "Tilman Holube";
       userEmail = "tilman@holube.de";
     };
-    dconf.settings = {
-      "org/gnome/desktop/wm/preferences".button-layout = "minimize, maximize, close";
-    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -131,9 +131,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # for use in vm
-    spice-vdagent
-    
+    dconf2nix # https://github.com/gvolpe/dconf2nix
+  
+    # gnome
+    gnome.gnome-tweaks
     # gnome extensions
     # gnomeExtensions.color-picker need a new one
     gnomeExtensions.date-menu-formatter
@@ -156,7 +157,8 @@
   programs.zsh = {
       enable = true;
       shellAliases = {
-        t-rebuild = "sudo nixos-rebuild switch -I nixos-config=/home/tilman/nixos-config/configuration.nix";
+        t-rebuild = "/home/tilman/nixos-config/rebuild.sh";
+        t-full-rebuild = "/home/tilman/nixos-config/full-rebuild.sh";
       };
       ohMyZsh = {
         enable = true;
