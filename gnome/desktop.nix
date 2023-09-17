@@ -84,7 +84,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
-      speed = -0.12403100775193798;
+      speed = -0.124031;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {

@@ -143,6 +143,7 @@
     # gnomeExtensions.timezones-extension need a new one
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
 
     # programming
     git
