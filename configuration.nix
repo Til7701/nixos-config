@@ -109,6 +109,7 @@
         spotify
         discord
         xournalpp
+        libreoffice
       ];
     };
   };
