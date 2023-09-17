@@ -108,6 +108,7 @@
         obsidian
         spotify
         discord
+        xournalpp
     ];
     };
   };
