@@ -63,7 +63,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" ];
+      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" ];
     };
 
     "org/gnome/desktop/notifications/application/firefox" = {
@@ -76,6 +76,15 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/thunderbird" = {
+      application-id = "thunderbird.desktop";
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+      speed = -0.12403100775193798;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {

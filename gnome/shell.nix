@@ -20,6 +20,8 @@ with lib.hm.gvariant;
     "org/gnome/shell/extensions/just-perfection" = {
       clock-menu-position-offset = 0;
       dash-icon-size = 40;
+      panel-button-padding-size = 6;
+      panel-indicator-padding-size = 1;
       startup-status = 0;
     };
 

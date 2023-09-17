@@ -109,14 +109,14 @@
         spotify
         discord
         xournalpp
-    ];
+      ];
     };
   };
   users.defaultUserShell = pkgs.zsh;
 
   home-manager.users.tilman = { pkgs, ... }: {
     home.stateVersion = "23.05";
-    imports = [ ./gnome/desktop.nix ./gnome/shell.nix ];
+    imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ];
     home.packages = with pkgs; [
       
     ];
