@@ -50,6 +50,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
+  services.xserver.displayManager.sessionCommands = ''
+    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+  '';
+  
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   
   environment.gnome.excludePackages = with pkgs.gnome; [
@@ -191,6 +195,8 @@
   # };
 
   # List services that you want to enable:
+  
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ]; # https://nixos.wiki/wiki/Displaylink
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
