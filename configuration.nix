@@ -14,6 +14,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  # https://wiki.archlinux.org/title/Lenovo_Yoga_9i_2022_(14AiPI7)
+  # https://nixos.wiki/wiki/ALSA
+  boot.extraModprobeConfig = ''
+    options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
+  '';
 
   networking.hostName = "T07LY9i"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -50,9 +56,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  services.xserver.displayManager.sessionCommands = ''
-    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
-  '';
+  # services.xserver.displayManager.sessionCommands = ''
+   # ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+  # '';
   
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   
