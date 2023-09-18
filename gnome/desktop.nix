@@ -6,7 +6,7 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "org/gnome/desktop/app-folders" = {
-      folder-children = [ "Utilities" "YaST" "a4f917ff-62c6-4084-9be0-8300b394c10a" "e628d05b-bfae-4092-9826-5cf72df3f0d8" "3c63dcfa-f83a-4e89-be27-cbefdbd011ed" "a5e6e034-ccc3-4182-a50d-24a576a7b844" "9c0b7171-8786-4bfa-9b27-650559aece57" ];
+      folder-children = [ "Utilities" "YaST" "a4f917ff-62c6-4084-9be0-8300b394c10a" "e628d05b-bfae-4092-9826-5cf72df3f0d8" "3c63dcfa-f83a-4e89-be27-cbefdbd011ed" "a5e6e034-ccc3-4182-a50d-24a576a7b844" "9c0b7171-8786-4bfa-9b27-650559aece57" "dd38635b-1f41-417a-9c7c-5b3b4cd8f724" ];
     };
 
     "org/gnome/desktop/app-folders/folders/3c63dcfa-f83a-4e89-be27-cbefdbd011ed" = {
@@ -43,6 +43,11 @@ with lib.hm.gvariant;
       name = "Office";
     };
 
+    "org/gnome/desktop/app-folders/folders/dd38635b-1f41-417a-9c7c-5b3b4cd8f724" = {
+      apps = [ "startcenter.desktop" "writer.desktop" "calc.desktop" "impress.desktop" "math.desktop" "draw.desktop" "base.desktop" ];
+      name = "Office";
+    };
+
     "org/gnome/desktop/app-folders/folders/e628d05b-bfae-4092-9826-5cf72df3f0d8" = {
       apps = [ "org.gnome.Cheese.desktop" "org.gnome.Photos.desktop" "org.gnome.Totem.desktop" "org.gnome.Music.desktop" ];
       name = "Sound & Video";
@@ -68,6 +73,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/firefox" = {
       application-id = "firefox.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+      application-id = "gnome-power-panel.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-console" = {
