@@ -158,18 +158,29 @@
   ];
   
   programs.zsh = {
-      enable = true;
-      shellAliases = {
-        t-rebuild = "/home/tilman/nixos-config/rebuild.sh";
-        t-full-rebuild = "/home/tilman/nixos-config/full-rebuild.sh";
-      };
-      ohMyZsh = {
-        enable = true;
-        custom = "/home/tilman/nixos-config/zsh";
-        plugins = [ "git" ];
-        theme = "tilman";
-      };
+    enable = true;
+    shellAliases = {
+      t-rebuild = "/home/tilman/nixos-config/rebuild.sh";
+      t-full-rebuild = "/home/tilman/nixos-config/full-rebuild.sh";
     };
+    ohMyZsh = {
+      enable = true;
+      custom = "/home/tilman/nixos-config/zsh";
+      plugins = [ "git" ];
+      theme = "tilman";
+    };
+  };
+    
+  # Suspend-then-hibernate everywhere https://www.worldofbs.com/nixos-framework/
+  services.logind = { # https://man7.org/linux/man-pages/man5/logind.conf.5.html
+    lidSwitch = "suspend-then-hibernate";
+    extraConfig = ''
+      HandlePowerKey=suspend-then-hibernate
+      IdleAction=suspend-then-hibernate
+      IdleActionSec=2m
+    '';
+  };
+  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
