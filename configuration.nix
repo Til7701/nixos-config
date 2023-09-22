@@ -172,8 +172,10 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      t-rebuild = "/home/tilman/nixos-config/rebuild.sh";
-      t-full-rebuild = "/home/tilman/nixos-config/full-rebuild.sh";
+      t-rebuild = "/home/tilman/nixos-config/scripts/rebuild.sh";
+      t-full-rebuild = "/home/tilman/nixos-config/scripts/full-rebuild.sh";
+      t-update = "/home/tilman/nixos-config/scripts/update.sh";
+      t-gnome-settings = "/home/tilman/nixos-config/scripts/gnome-settings.sh";
     };
     ohMyZsh = {
       enable = true;
