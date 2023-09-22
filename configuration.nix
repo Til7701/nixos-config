@@ -14,6 +14,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
   
   # https://wiki.archlinux.org/title/Lenovo_Yoga_9i_2022_(14AiPI7)
   # https://nixos.wiki/wiki/ALSA
@@ -165,6 +166,7 @@
     # utils
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    htop
   ];
   
   programs.zsh = {
