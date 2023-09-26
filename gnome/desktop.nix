@@ -71,8 +71,16 @@ with lib.hm.gvariant;
       application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" ];
     };
 
+    "org/gnome/desktop/notifications/application/com-nextcloud-desktopclient-nextcloud" = {
+      application-id = "com.nextcloud.desktopclient.nextcloud.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/firefox" = {
       application-id = "firefox.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-network-panel" = {
+      application-id = "gnome-network-panel.desktop";
     };
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
@@ -85,6 +93,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-keepassxc-keepassxc" = {
+      application-id = "org.keepassxc.KeePassXC.desktop";
     };
 
     "org/gnome/desktop/notifications/application/thunderbird" = {

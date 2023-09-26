@@ -117,10 +117,14 @@
         jetbrains.phpstorm
         jetbrains.pycharm-community
         obsidian
+        logseq
         spotify
         discord
         xournalpp
         libreoffice
+        gimp
+        vscode
+        inkscape
       ];
     };
   };
@@ -128,7 +132,7 @@
 
   home-manager.users.tilman = { pkgs, ... }: {
     home.stateVersion = "23.05";
-    imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ];
+    imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ./gnome/media-keys.nix ];
     home.packages = with pkgs; [
       
     ];
@@ -157,17 +161,15 @@
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
 
-    # programming
     git
-    #java
-    openjdk8
-    openjdk17
 
     # utils
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     htop
   ];
+  
+  programs.java.enable = true;
   
   programs.zsh = {
     enable = true;
@@ -176,6 +178,7 @@
       t-full-rebuild = "/home/tilman/nixos-config/scripts/full-rebuild.sh";
       t-update = "/home/tilman/nixos-config/scripts/update.sh";
       t-gnome-settings = "/home/tilman/nixos-config/scripts/gnome-settings.sh";
+      t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
     };
     ohMyZsh = {
       enable = true;
