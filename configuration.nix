@@ -174,6 +174,7 @@
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       t-rebuild = "/home/tilman/nixos-config/scripts/rebuild.sh";
       t-full-rebuild = "/home/tilman/nixos-config/scripts/full-rebuild.sh";
