@@ -179,6 +179,7 @@
       t-rebuild = "/home/tilman/nixos-config/scripts/rebuild.sh";
       t-full-rebuild = "/home/tilman/nixos-config/scripts/full-rebuild.sh";
       t-update = "/home/tilman/nixos-config/scripts/update.sh";
+      t-collect-garbage = "/home/tilman/nixos-config/scripts/collect-garbage.sh";
       t-gnome-settings = "/home/tilman/nixos-config/scripts/gnome-settings.sh";
       t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
     };
