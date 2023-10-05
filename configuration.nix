@@ -4,7 +4,10 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
+
   imports =
     [
       ./hardware-configuration.nix
@@ -116,7 +119,7 @@
         jetbrains.idea-ultimate
         jetbrains.phpstorm
         jetbrains.pycharm-community
-        obsidian
+        unstable.obsidian
         logseq
         spotify
         discord
@@ -133,9 +136,6 @@
   home-manager.users.tilman = { pkgs, ... }: {
     home.stateVersion = "23.05";
     imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ./gnome/media-keys.nix ];
-    home.packages = with pkgs; [
-      
-    ];
     programs.git = {
       enable = true;
       userName = "Tilman Holube";
@@ -144,12 +144,14 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings.auto-optimise-store = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  
   environment.systemPackages = with pkgs; [
     dconf2nix # https://github.com/gvolpe/dconf2nix
-  
+
     # gnome
     gnome.gnome-tweaks
     # gnome extensions
@@ -167,9 +169,15 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     htop
+    nodejs
   ];
   
-  programs.java.enable = true;
+  programs.java = {
+    enable = true;
+    package = pkgs.openjdk17;
+  };
+  
+  virtualisation.docker.enable = true;
   
   programs.zsh = {
     enable = true;
