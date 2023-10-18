@@ -224,6 +224,18 @@ in {
   
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ]; # https://nixos.wiki/wiki/Displaylink
 
+  nixpkgs.overlays = let
+    nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
+  in [
+    nix-matlab.overlay
+    (
+      final: prev: {
+        # Your own overlays...
+      }
+    )
+  ];
+
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
