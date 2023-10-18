@@ -61,7 +61,7 @@ in {
   services.xserver.desktopManager.gnome.enable = true;
   
   # services.xserver.displayManager.sessionCommands = ''
-   # ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+  #   ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
   # '';
   
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
@@ -116,6 +116,7 @@ in {
         thunderbird
         keepassxc
         nextcloud-client
+        owncloud-client
         jetbrains.idea-ultimate
         jetbrains.phpstorm
         jetbrains.pycharm-community
@@ -128,6 +129,7 @@ in {
         gimp
         vscode
         inkscape
+        chromium
       ];
     };
   };
