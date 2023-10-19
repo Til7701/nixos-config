@@ -53,6 +53,12 @@ with lib.hm.gvariant;
       name = "Sound & Video";
     };
 
+    "org/gnome/desktop/background" = {
+      picture-options = "zoom";
+      picture-uri = "/home/tilman/.config/background";
+      picture-uri-dark = "/home/tilman/.config/background";
+    };
+
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "de" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
@@ -71,8 +77,16 @@ with lib.hm.gvariant;
       application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" ];
     };
 
+    "org/gnome/desktop/notifications/application/code" = {
+      application-id = "code.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/com-nextcloud-desktopclient-nextcloud" = {
       application-id = "com.nextcloud.desktopclient.nextcloud.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
     };
 
     "org/gnome/desktop/notifications/application/firefox" = {
@@ -99,6 +113,10 @@ with lib.hm.gvariant;
       application-id = "org.keepassxc.KeePassXC.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/owncloud" = {
+      application-id = "owncloud.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/thunderbird" = {
       application-id = "thunderbird.desktop";
     };
@@ -116,6 +134,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/search-providers" = {
       disabled = [ "org.gnome.seahorse.Application.desktop" "org.gnome.Photos.desktop" ];
       sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
+    };
+
+    "org/gnome/desktop/session" = {
+      idle-delay = mkUint32 0;
     };
 
     "org/gnome/desktop/wm/preferences" = {

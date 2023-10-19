@@ -166,6 +166,7 @@ in {
     gnomeExtensions.dash-to-dock
 
     git
+    unstable.javaPackages.openjfx21
 
     # utils
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -173,10 +174,12 @@ in {
     htop
     nodejs
   ];
+  # custom links to packages in nix/store
+  environment.etc."java/javafx".source = "${pkgs.javaPackages.openjfx17}";
   
   programs.java = {
     enable = true;
-    package = pkgs.openjdk17;
+    package = unstable.jdk21;
   };
   
   virtualisation.docker.enable = true;

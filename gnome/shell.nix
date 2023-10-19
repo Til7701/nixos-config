@@ -19,7 +19,7 @@ with lib.hm.gvariant;
       custom-theme-shrink = true;
       dash-max-icon-size = 48;
       disable-overview-on-startup = true;
-      dock-position = "LEFT";
+      dock-position = "RIGHT";
       extend-height = false;
       height-fraction = 1.0;
       icon-size-fixed = true;
