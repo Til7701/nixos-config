@@ -166,7 +166,10 @@ in {
     gnomeExtensions.dash-to-dock
 
     git
-    unstable.javaPackages.openjfx21
+    ## for using javafx
+    xorg.libX11
+    xorg.libXtst
+    xorg.libXxf86vm
 
     # utils
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -176,6 +179,10 @@ in {
   ];
   # custom links to packages in nix/store
   environment.etc."java/javafx".source = "${pkgs.javaPackages.openjfx17}";
+  
+  environment.variables = {
+    LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:$LD_LIBRARY_PATH";
+  };
   
   programs.java = {
     enable = true;
