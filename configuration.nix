@@ -121,7 +121,6 @@ in {
         jetbrains.phpstorm
         jetbrains.pycharm-community
         unstable.obsidian
-        logseq
         spotify
         discord
         xournalpp
