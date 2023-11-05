@@ -42,6 +42,7 @@ with lib.hm.gvariant;
       panel-button-padding-size = 6;
       panel-indicator-padding-size = 1;
       startup-status = 0;
+      weather = false;
     };
 
     "org/gnome/shell/extensions/vitals" = {

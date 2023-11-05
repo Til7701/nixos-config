@@ -54,9 +54,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
       picture-options = "zoom";
       picture-uri = "/home/tilman/.config/background";
       picture-uri-dark = "/home/tilman/.config/background";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -75,10 +78,15 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications" = {
       application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" ];
+      show-banners = true;
     };
 
     "org/gnome/desktop/notifications/application/code" = {
       application-id = "code.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/com-github-xournalpp-xournalpp" = {
+      application-id = "com.github.xournalpp.xournalpp.desktop";
     };
 
     "org/gnome/desktop/notifications/application/com-nextcloud-desktopclient-nextcloud" = {
@@ -109,6 +117,10 @@ with lib.hm.gvariant;
       application-id = "org.gnome.Nautilus.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-settings" = {
+      application-id = "org.gnome.Settings.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-keepassxc-keepassxc" = {
       application-id = "org.keepassxc.KeePassXC.desktop";
     };
@@ -129,6 +141,14 @@ with lib.hm.gvariant;
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///home/tilman/.local/share/backgrounds/2023-10-26-19-50-16-P8191103_16z9.jpg";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/search-providers" = {
