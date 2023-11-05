@@ -92,7 +92,7 @@ in {
       description = "Tilman";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
-        firefox
+        unstable.firefox
         thunderbird
         keepassxc
         nextcloud-client
@@ -102,11 +102,11 @@ in {
         jetbrains.pycharm-community
         unstable.obsidian
         spotify
-        discord
+        unstable.discord
         xournalpp
         libreoffice
         gimp
-        vscode
+        unstable.vscode
         inkscape
         chromium
       ];
