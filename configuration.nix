@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 let
+  user = "tilman";
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 
@@ -86,7 +87,7 @@ in {
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
-    tilman = {
+    "${user}" = {
       isNormalUser = true;
       description = "Tilman";
       extraGroups = [ "networkmanager" "wheel" ];
@@ -113,7 +114,7 @@ in {
   };
   users.defaultUserShell = pkgs.zsh;
 
-  home-manager.users.tilman = { pkgs, ... }: {
+  home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = "23.05";
     imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ./gnome/media-keys.nix ];
     programs.git = {
@@ -174,16 +175,16 @@ in {
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      t-rebuild = "/home/tilman/nixos-config/scripts/rebuild.sh";
-      t-full-rebuild = "/home/tilman/nixos-config/scripts/full-rebuild.sh";
-      t-update = "/home/tilman/nixos-config/scripts/update.sh";
-      t-collect-garbage = "/home/tilman/nixos-config/scripts/collect-garbage.sh";
-      t-gnome-settings = "/home/tilman/nixos-config/scripts/gnome-settings.sh";
+      t-rebuild = "/home/${user}/nixos-config/scripts/rebuild.sh";
+      t-full-rebuild = "/home/${user}/nixos-config/scripts/full-rebuild.sh";
+      t-update = "/home/${user}/nixos-config/scripts/update.sh";
+      t-collect-garbage = "/home/${user}/nixos-config/scripts/collect-garbage.sh";
+      t-gnome-settings = "/home/${user}/nixos-config/scripts/gnome-settings.sh";
       t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
     };
     ohMyZsh = {
       enable = true;
-      custom = "/home/tilman/nixos-config/zsh";
+      custom = "/home/${user}/nixos-config/zsh";
       plugins = [ "git" ];
       theme = "tilman";
     };
