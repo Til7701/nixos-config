@@ -11,26 +11,9 @@ in {
   imports =
     [
       ./hardware-configuration.nix
+      ./T07LY9i.nix
       <home-manager/nixos>
     ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-  
-  # https://wiki.archlinux.org/title/Lenovo_Yoga_9i_2022_(14AiPI7)
-  # https://nixos.wiki/wiki/ALSA
-  boot.extraModprobeConfig = ''
-    options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
-  '';
-
-  networking.hostName = "T07LY9i"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -59,10 +42,6 @@ in {
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
-  # services.xserver.displayManager.sessionCommands = ''
-  #   ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
-  # '';
   
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   
@@ -209,17 +188,6 @@ in {
       theme = "tilman";
     };
   };
-    
-  # Suspend-then-hibernate everywhere https://www.worldofbs.com/nixos-framework/
-  services.logind = { # https://man7.org/linux/man-pages/man5/logind.conf.5.html
-    lidSwitch = "suspend-then-hibernate";
-    extraConfig = ''
-      HandlePowerKey=suspend-then-hibernate
-      IdleAction=suspend-then-hibernate
-      IdleActionSec=2m
-    '';
-  };
-  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -230,8 +198,6 @@ in {
   # };
 
   # List services that you want to enable:
-  
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ]; # https://nixos.wiki/wiki/Displaylink
 
   nixpkgs.overlays = let
     nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
@@ -243,7 +209,6 @@ in {
       }
     )
   ];
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
