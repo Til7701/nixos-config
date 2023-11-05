@@ -175,8 +175,8 @@ in {
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      t-rebuild = "/home/${user}/nixos-config/scripts/rebuild.sh";
-      t-full-rebuild = "/home/${user}/nixos-config/scripts/full-rebuild.sh";
+      t07-rebuild = "/home/${user}/nixos-config/scripts/rebuild07.sh";
+      t07-full-rebuild = "/home/${user}/nixos-config/scripts/full-rebuild07.sh";
       t-update = "/home/${user}/nixos-config/scripts/update.sh";
       t-collect-garbage = "/home/${user}/nixos-config/scripts/collect-garbage.sh";
       t-gnome-settings = "/home/${user}/nixos-config/scripts/gnome-settings.sh";
