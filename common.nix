@@ -92,7 +92,7 @@ in {
         description = "Tilman";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
-          unstable.firefox
+          firefox
           thunderbird
           keepassxc
           nextcloud-client
