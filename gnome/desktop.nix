@@ -56,8 +56,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "/home/tilman/.config/background";
-      picture-uri-dark = "/home/tilman/.config/background";
+      picture-uri = "file:///home/tilman/.local/share/backgrounds/2023-10-26-19-50-16-P8191103_16z9.jpg";
+      picture-uri-dark = "file:///home/tilman/.local/share/backgrounds/2023-10-26-19-50-16-P8191103_16z9.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
