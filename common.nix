@@ -109,6 +109,7 @@ in {
           unstable.vscode
           inkscape
           chromium
+          stellarium
         ];
       };
     };
