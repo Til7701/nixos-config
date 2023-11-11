@@ -97,7 +97,7 @@ in {
           keepassxc
           nextcloud-client
           owncloud-client
-          jetbrains.idea-ultimate
+          unstable.jetbrains.idea-ultimate
           jetbrains.phpstorm
           jetbrains.pycharm-community
           unstable.obsidian
