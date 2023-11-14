@@ -98,6 +98,7 @@ in {
           nextcloud-client
           owncloud-client
           unstable.jetbrains.idea-ultimate
+          jetbrains.idea-community
           jetbrains.phpstorm
           jetbrains.pycharm-community
           unstable.obsidian
