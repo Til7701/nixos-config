@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-{
+let
+  thisUser = "tilman";
+in {
   imports =[
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
@@ -8,9 +10,9 @@
     ./modules
   ];
 
-  tilman.common.user = "tilman";
-  tilman.zsh.user = "tilman";
-  tilman.gnome.user = "tilman";
+  tilman.common.user = thisUser;
+  tilman.zsh.user = thisUser;
+  tilman.gnome.user = thisUser;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
