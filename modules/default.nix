@@ -3,5 +3,6 @@
 {
   imports =[
     ./java.nix
+    ./zsh
   ];
 }

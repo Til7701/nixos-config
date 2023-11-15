@@ -164,26 +164,6 @@ in {
     };
     
     virtualisation.docker.enable = true;
-    
-    programs.zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      shellAliases = {
-        t-rebuild = "/home/${cfg.user}/nixos-config/scripts/rebuild.sh";
-        t-full-rebuild = "/home/${cfg.user}/nixos-config/scripts/full-rebuild.sh";
-        t-update = "/home/${cfg.user}/nixos-config/scripts/update.sh";
-        t-collect-garbage = "/home/${cfg.user}/nixos-config/scripts/collect-garbage.sh";
-        t-gnome-settings = "/home/${cfg.user}/nixos-config/scripts/gnome-settings.sh";
-        t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
-      };
-      ohMyZsh = {
-        enable = true;
-        custom = "/home/${cfg.user}/nixos-config/zsh";
-        plugins = [ "git" ];
-        theme = "tilman";
-      };
-    };
 
     nixpkgs.overlays = let
       nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
