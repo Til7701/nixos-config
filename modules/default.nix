@@ -4,5 +4,6 @@
   imports =[
     ./java
     ./zsh
+    ./gnome
   ];
 }

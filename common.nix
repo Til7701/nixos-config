@@ -37,28 +37,6 @@ in {
       LC_TIME = "de_DE.UTF-8";
     };
 
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
-    
-    services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-    
-    environment.gnome.excludePackages = with pkgs.gnome; [
-      epiphany # web browser
-      geary    # email client
-    ];
-    
-    programs.dconf.enable = true;
-
-    # Configure keymap in X11
-    services.xserver = {
-      layout = "de";
-      xkbVariant = "";
-    };
-
     # Configure console keymap
     console.keyMap = "de";
 
@@ -118,7 +96,6 @@ in {
 
     home-manager.users.${cfg.user} = { pkgs, ... }: {
       home.stateVersion = "23.05";
-      imports = [ ./gnome/desktop.nix ./gnome/shell.nix ./gnome/mutter.nix ./gnome/media-keys.nix ];
       programs.git = {
         enable = true;
         userName = "Tilman Holube";
@@ -133,19 +110,6 @@ in {
     # $ nix search wget
     
     environment.systemPackages = with pkgs; [
-      dconf2nix # https://github.com/gvolpe/dconf2nix
-
-      # gnome
-      gnome.gnome-tweaks
-      # gnome extensions
-      # gnomeExtensions.color-picker need a new one
-      gnomeExtensions.date-menu-formatter
-      gnomeExtensions.just-perfection
-      # gnomeExtensions.timezones-extension need a new one
-      gnomeExtensions.vitals
-      gnomeExtensions.appindicator
-      gnomeExtensions.dash-to-dock
-
       git
       ## for using javafx
       xorg.libX11
