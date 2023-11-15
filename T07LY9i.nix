@@ -5,6 +5,7 @@
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
     ./T07LY9i/configuration.nix
+    ./modules
   ];
 
   tilman.common.user = "tilman";
