@@ -107,7 +107,7 @@ in {
           xournalpp
           libreoffice
           gimp
-          unstable.vscode
+          vscode
           inkscape
           chromium
           stellarium
@@ -177,8 +177,8 @@ in {
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        t07-rebuild = "/home/${cfg.user}/nixos-config/scripts/rebuild07.sh";
-        t07-full-rebuild = "/home/${cfg.user}/nixos-config/scripts/full-rebuild07.sh";
+        t-rebuild = "/home/${cfg.user}/nixos-config/scripts/rebuild.sh";
+        t-full-rebuild = "/home/${cfg.user}/nixos-config/scripts/full-rebuild.sh";
         t-update = "/home/${cfg.user}/nixos-config/scripts/update.sh";
         t-collect-garbage = "/home/${cfg.user}/nixos-config/scripts/collect-garbage.sh";
         t-gnome-settings = "/home/${cfg.user}/nixos-config/scripts/gnome-settings.sh";
