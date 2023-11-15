@@ -13,6 +13,8 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    users.defaultUserShell = pkgs.zsh;
+
     programs.zsh = {
       enable = true;
       autosuggestions.enable = true;

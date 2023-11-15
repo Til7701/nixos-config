@@ -94,7 +94,6 @@ in {
         ];
       };
     };
-    users.defaultUserShell = pkgs.zsh;
 
     home-manager.users.${cfg.user} = { pkgs, ... }: {
       home.stateVersion = "23.05";
