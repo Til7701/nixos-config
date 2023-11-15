@@ -10,9 +10,22 @@ in {
     ./modules
   ];
 
-  tilman.common.user = thisUser;
-  tilman.zsh.user = thisUser;
-  tilman.gnome.user = thisUser;
+  tilman.common = {
+    enable = true;
+    user = thisUser;
+  };
+
+  tilman.gnome = {
+    enable = true;
+    user = thisUser;
+  };
+
+  tilman.zsh = {
+    enable = true;
+    user = thisUser;
+  };
+
+  tilman.java.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

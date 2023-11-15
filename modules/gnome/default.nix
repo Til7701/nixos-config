@@ -5,12 +5,14 @@ let
 in {
 
   options.tilman.gnome = {
+    enable = lib.mkEnableOption "gnome";
+
     user = lib.mkOption {
       type = lib.types.str;
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 

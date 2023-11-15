@@ -1,6 +1,8 @@
 { lib, config, pkgs, ... }:
 
 let
+  cfg = config.tilman.java;
+
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 
   # set priorities for jdks. lower priorities win
@@ -12,11 +14,11 @@ let
   });
 in {
 
-  options.tilman.common = {
-    
+  options.tilman.java = {
+    enable = lib.mkEnableOption "java";
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       java17
       java21

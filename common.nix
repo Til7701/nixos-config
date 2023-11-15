@@ -10,12 +10,14 @@ in {
   ];
 
   options.tilman.common = {
+    enable = lib.mkEnableOption "common";
+
     user = lib.mkOption {
       type = lib.types.str;
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     # Enable networking
     networking.networkmanager.enable = true;
 

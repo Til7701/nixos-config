@@ -5,12 +5,14 @@ let
 in {
 
   options.tilman.zsh = {
+    enable = lib.mkEnableOption "zsh";
+
     user = lib.mkOption {
       type = lib.types.str;
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     programs.zsh = {
       enable = true;
       autosuggestions.enable = true;
