@@ -2,7 +2,7 @@
 
 {
   imports =[
-    ./java.nix
+    ./java
     ./zsh
   ];
 }
