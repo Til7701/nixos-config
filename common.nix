@@ -72,7 +72,6 @@ in {
         description = "Tilman";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
-          firefox
           thunderbird
           keepassxc
           nextcloud-client
@@ -123,7 +122,7 @@ in {
       htop
       nodejs
     ];
-    
+
     environment.variables = {
       LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:$LD_LIBRARY_PATH";
     };

@@ -5,5 +5,6 @@
     ./java
     ./zsh
     ./gnome
+    ./firefox
   ];
 }

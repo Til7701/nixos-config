@@ -26,6 +26,11 @@ in {
   };
 
   tilman.java.enable = true;
+  
+  tilman.firefox = {
+    enable = true;
+    user = thisUser;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
