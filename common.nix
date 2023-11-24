@@ -90,6 +90,7 @@ in {
           inkscape
           chromium
           stellarium
+          signal-desktop
         ];
       };
     };
