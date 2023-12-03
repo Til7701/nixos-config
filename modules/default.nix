@@ -6,5 +6,6 @@
     ./zsh
     ./gnome
     ./firefox
+    ./python
   ];
 }
