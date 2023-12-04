@@ -122,6 +122,7 @@ in {
       wget
       htop
       nodejs
+      neofetch
     ];
 
     environment.variables = {

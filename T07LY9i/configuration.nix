@@ -7,6 +7,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelPackages = pkgs.linuxPackages_6_5;
 
   # Speaker Pin
   # https://wiki.archlinux.org/title/Lenovo_Yoga_9i_2022_(14AiPI7)
