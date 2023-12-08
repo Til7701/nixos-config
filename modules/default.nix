@@ -7,5 +7,6 @@
     ./gnome
     ./firefox
     ./python
+    ./latex
   ];
 }
