@@ -95,17 +95,22 @@ in {
       };
     };
 
+    nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
+    nix.settings.auto-optimise-store = true;
+
     home-manager.users.${cfg.user} = { pkgs, ... }: {
-      home.stateVersion = "23.05";
+      home.stateVersion = config.system.stateVersion;
       programs.git = {
         enable = true;
         userName = "Tilman Holube";
         userEmail = "tilman@holube.de";
       };
     };
-
-    nixpkgs.config.allowUnfree = true;
-    nix.settings.auto-optimise-store = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
