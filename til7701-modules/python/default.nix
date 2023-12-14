@@ -24,6 +24,6 @@ in {
       PYCHARM_PYTHON_PATH = "${my-python3}/bin/python";
     };
 
-    environment.etc."python/python3".source = "${my-python3}/";
+    environment.etc."_til7701/python/python3".source = "${my-python3}/";
   };
 }

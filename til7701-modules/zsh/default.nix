@@ -25,7 +25,7 @@ in {
       };
       ohMyZsh = {
         enable = true;
-        custom = "/home/${config.til7701.user}/nixos-config/modules/zsh/custom";
+        custom = "/home/${config.til7701.user}/nixos-config/til7701-modules/zsh/custom";
         plugins = [ "git" ];
         theme = "tilman";
       };
