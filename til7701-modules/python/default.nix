@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 let
-  cfg = config.tilman.python;
+  cfg = config.til7701.python;
 
   my-python-packages = ps: with ps; [
     matplotlib
@@ -11,7 +11,7 @@ let
   my-python3 = (pkgs.python3.withPackages my-python-packages);
 in {
 
-  options.tilman.python = {
+  options.til7701.python = {
     enable = lib.mkEnableOption "python";
   };
 

@@ -1,16 +1,14 @@
 { config, pkgs, ... }:
 
-let
-  thisUser = "tilman";
-in {
+{
   imports =[
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
     ./T07LY9i/configuration.nix
-    ./modules
+    ./til7701-modules
   ];
 
-  tilman = {
+  til7701 = {
     user = "tilman";
 
     common.enable = true;

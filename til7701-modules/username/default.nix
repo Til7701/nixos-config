@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  options.tilman = {
+  options.til7701 = {
     user = lib.mkOption {
       type = lib.types.str;
     };

@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 let
-  cfg = config.tilman.common;
+  cfg = config.til7701.common;
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 
@@ -9,7 +9,7 @@ in {
     <home-manager/nixos>
   ];
 
-  options.tilman.common = {
+  options.til7701.common = {
     enable = lib.mkEnableOption "common";
   };
 
@@ -63,7 +63,7 @@ in {
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users = {
-      ${config.tilman.user} = {
+      ${config.til7701.user} = {
         isNormalUser = true;
         description = "Tilman";
         extraGroups = [ "networkmanager" "wheel" ];
@@ -99,7 +99,7 @@ in {
     };
     nix.settings.auto-optimise-store = true;
 
-    home-manager.users.${config.tilman.user} = { pkgs, ... }: {
+    home-manager.users.${config.til7701.user} = { pkgs, ... }: {
       home.stateVersion = config.system.stateVersion;
       programs.git = {
         enable = true;

@@ -1,10 +1,10 @@
 { lib, config, pkgs, ... }:
 
 let
-  cfg = config.tilman.gnome;
+  cfg = config.til7701.gnome;
 in {
 
-  options.tilman.gnome = {
+  options.til7701.gnome = {
     enable = lib.mkEnableOption "gnome";
   };
 
@@ -22,7 +22,7 @@ in {
       xkbVariant = "";
     };
 
-    home-manager.users.${config.tilman.user} = { pkgs, ... }: {
+    home-manager.users.${config.til7701.user} = { pkgs, ... }: {
       imports = [ ./dconf/desktop.nix ./dconf/shell.nix ./dconf/mutter.nix ./dconf/media-keys.nix ];
     };
 

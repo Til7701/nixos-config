@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 let
-  cfg = config.tilman.java;
+  cfg = config.til7701.java;
 
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 
@@ -14,7 +14,7 @@ let
   });
 in {
 
-  options.tilman.java = {
+  options.til7701.java = {
     enable = lib.mkEnableOption "java";
   };
 

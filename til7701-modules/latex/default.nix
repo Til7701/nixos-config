@@ -1,10 +1,10 @@
 { lib, config, pkgs, ... }:
 
 let
-  cfg = config.tilman.latex;
+  cfg = config.til7701.latex;
 in {
 
-  options.tilman.latex = {
+  options.til7701.latex = {
     enable = lib.mkEnableOption "latex";
   };
 
