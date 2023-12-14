@@ -80,7 +80,7 @@ in {
           jetbrains.idea-community
           jetbrains.phpstorm
           jetbrains.pycharm-community
-          unstable.obsidian
+          obsidian
           spotify
           unstable.discord
           xournalpp

@@ -10,30 +10,32 @@ in {
     ./modules
   ];
 
-  tilman.common = {
-    enable = true;
-    user = thisUser;
-  };
+  tilman = {
+    common = {
+      enable = true;
+      user = thisUser;
+    };
 
-  tilman.gnome = {
-    enable = true;
-    user = thisUser;
-  };
+    gnome = {
+      enable = true;
+      user = thisUser;
+    };
 
-  tilman.zsh = {
-    enable = true;
-    user = thisUser;
-  };
+    zsh = {
+      enable = true;
+      user = thisUser;
+    };
 
-  tilman.java.enable = true;
-  
-  tilman.firefox = {
-    enable = true;
-    user = thisUser;
-  };
+    java.enable = true;
+    
+    firefox = {
+      enable = true;
+      user = thisUser;
+    };
 
-  tilman.python.enable = true;
-  tilman.latex.enable = true;
+    python.enable = true;
+    latex.enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
