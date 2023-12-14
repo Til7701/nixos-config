@@ -36,9 +36,8 @@ in {
     environment.systemPackages = with pkgs; [
       dconf2nix # https://github.com/gvolpe/dconf2nix
 
-      # gnome
       gnome.gnome-tweaks
-      # gnome extensions
+
       # gnomeExtensions.color-picker need a new one
       gnomeExtensions.date-menu-formatter
       gnomeExtensions.just-perfection
