@@ -11,28 +11,13 @@ in {
   ];
 
   tilman = {
-    common = {
-      enable = true;
-      user = thisUser;
-    };
+    user = "tilman";
 
-    gnome = {
-      enable = true;
-      user = thisUser;
-    };
-
-    zsh = {
-      enable = true;
-      user = thisUser;
-    };
-
+    common.enable = true;
+    gnome.enable = true;
+    zsh.enable = true;
     java.enable = true;
-    
-    firefox = {
-      enable = true;
-      user = thisUser;
-    };
-
+    firefox.enable = true;
     python.enable = true;
     latex.enable = true;
   };

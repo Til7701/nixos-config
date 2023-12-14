@@ -6,10 +6,6 @@ in {
 
   options.tilman.gnome = {
     enable = lib.mkEnableOption "gnome";
-
-    user = lib.mkOption {
-      type = lib.types.str;
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -26,7 +22,7 @@ in {
       xkbVariant = "";
     };
 
-    home-manager.users.${cfg.user} = { pkgs, ... }: {
+    home-manager.users.${config.tilman.user} = { pkgs, ... }: {
       imports = [ ./dconf/desktop.nix ./dconf/shell.nix ./dconf/mutter.nix ./dconf/media-keys.nix ];
     };
 

@@ -2,6 +2,7 @@
 
 {
   imports =[
+    ./username
     ./java
     ./zsh
     ./gnome

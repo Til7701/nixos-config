@@ -6,10 +6,6 @@ in {
 
   options.tilman.firefox = {
     enable = lib.mkEnableOption "firefox";
-
-    user = lib.mkOption {
-      type = lib.types.str;
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -21,7 +17,7 @@ in {
       #  "de"
       #];
       # https://mozilla.github.io/policy-templates/
-      #policies = builtins.fromJSON (builtins.readFile "/home/${cfg.user}/nixos-config/modules/firefox/policies.json");
+      #policies = builtins.fromJSON (builtins.readFile "/home/${config.tilman.user}/nixos-config/modules/firefox/policies.json");
     };
   };
 }

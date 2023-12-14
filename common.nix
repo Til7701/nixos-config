@@ -11,10 +11,6 @@ in {
 
   options.tilman.common = {
     enable = lib.mkEnableOption "common";
-
-    user = lib.mkOption {
-      type = lib.types.str;
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -67,7 +63,7 @@ in {
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users = {
-      ${cfg.user} = {
+      ${config.tilman.user} = {
         isNormalUser = true;
         description = "Tilman";
         extraGroups = [ "networkmanager" "wheel" ];
@@ -103,7 +99,7 @@ in {
     };
     nix.settings.auto-optimise-store = true;
 
-    home-manager.users.${cfg.user} = { pkgs, ... }: {
+    home-manager.users.${config.tilman.user} = { pkgs, ... }: {
       home.stateVersion = config.system.stateVersion;
       programs.git = {
         enable = true;
