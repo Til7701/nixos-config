@@ -2,6 +2,9 @@
 
 let
   cfg = config.til7701.zsh;
+
+  scriptsDir = ../../scripts;
+  customDir = ./custom;
 in {
 
   options.til7701.zsh = {
@@ -16,16 +19,16 @@ in {
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        t-rebuild = "/home/${config.til7701.user}/nixos-config/scripts/rebuild.sh";
-        t-full-rebuild = "/home/${config.til7701.user}/nixos-config/scripts/full-rebuild.sh";
-        t-update = "/home/${config.til7701.user}/nixos-config/scripts/update.sh";
-        t-collect-garbage = "/home/${config.til7701.user}/nixos-config/scripts/collect-garbage.sh";
-        t-gnome-settings = "/home/${config.til7701.user}/nixos-config/scripts/gnome-settings.sh";
+        t-rebuild = "${scriptsDir}/rebuild.sh";
+        t-full-rebuild = "${scriptsDir}/full-rebuild.sh";
+        t-update = "${scriptsDir}/update.sh";
+        t-collect-garbage = "${scriptsDir}/collect-garbage.sh";
+        t-gnome-settings = "${scriptsDir}/gnome-settings.sh";
         t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
       };
       ohMyZsh = {
         enable = true;
-        custom = "/home/${config.til7701.user}/nixos-config/til7701-modules/zsh/custom";
+        custom = "${customDir}";
         plugins = [ "git" ];
         theme = "tilman";
       };
