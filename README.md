@@ -1,7 +1,5 @@
 # My NixOS Configuration
 This is work in progress!
-- There are a lot of absolute and relative paths mixed up.
-- some other things...
 
 ## First installation
 run `install.sh` before first rebuild
