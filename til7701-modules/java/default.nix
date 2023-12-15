@@ -2,45 +2,41 @@
 
 let
   cfg = config.til7701.java;
-
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 
-  # set priorities for jdks. lower priorities win
-  java17 = pkgs.jdk17.overrideAttrs (oldAttrs: {
-    meta.priority = 1;
-  });
-  java21 = pkgs.jdk21.overrideAttrs (oldAttrs: {
-    meta.priority = 10;
-  });
-  java-unstable = unstable.jdk.overrideAttrs (oldAttrs: {
-    meta.priority = 100;
-  });
-  java-stable = pkgs.jdk.overrideAttrs (oldAttrs: {
-    meta.priority = 1000;
-  });
-  java-latest-lts = java21;
+  setPriority = index: pkg:
+    pkg.overrideAttrs (oldAttrs: {
+      meta.priority = index + 1;
+    });
+  createLinks = pkg: {
+    "${pkg}/lib/openjdk" = lib.cleanSource pkg;
+  };
+
+  JDKsWithPriority = lib.lists.map setPriority cfg.packages;
+  links = lib.lists.map createLinks JDKsWithPriority;
+  defaultJDK = lib.head JDKsWithPriority;
 in {
 
   options.til7701.java = {
     enable = lib.mkEnableOption "java";
+    packages = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
+      default = [
+        pkgs.jdk21
+        pkgs.jdk17
+      ];
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [
-      java17
-      java21
-      java-unstable
-      java-stable
-    ];
+    environment.systemPackages = JDKsWithPriority;
 
-    environment.variables = {
-      JAVA_HOME = "${java21.home}/lib/openjdk";
+    environment.etc."_til7701/java" = {
+      inherit links;
     };
 
-    environment.etc."_til7701/java/jdk17".source = "${java17}/lib/openjdk";
-    environment.etc."_til7701/java/jdk21".source = "${java21}/lib/openjdk";
-    environment.etc."_til7701/java/java-unstable".source = "${java-unstable}/lib/openjdk";
-    environment.etc."_til7701/java/java-stable".source = "${java-stable}/lib/openjdk";
-    environment.etc."_til7701/java/java-latest-lts".source = "${java-latest-lts}/lib/openjdk";
+    environment.variables = {
+      JAVA_HOME = "${defaultJDK}/lib/openjdk";
+    };
   };
 }

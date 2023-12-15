@@ -15,6 +15,10 @@
     gnome.enable = true;
     zsh.enable = true;
     java.enable = true;
+    java.packages = [
+      pkgs.jdk21
+      pkgs.jdk17
+    ];
     firefox.enable = true;
     python.enable = true;
     latex.enable = true;
