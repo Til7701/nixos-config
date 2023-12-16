@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
   imports =[
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
@@ -14,7 +16,36 @@
     common.enable = true;
     gnome.enable = true;
     zsh.enable = true;
-    java.enable = true;
+    java = {
+      enable = true;
+      jdks = {
+        jdk21 = {
+          default = true;
+          package = pkgs.jdk21;
+          priority = 1;
+        };
+        jdk17 = {
+          package = pkgs.jdk17;
+          priority = 2;
+        };
+        latest-lts = {
+          package = pkgs.jdk21;
+          priority = 3;
+        };
+        jdk-stable = {
+          package = pkgs.jdk;
+          priority = 4;
+        };
+        jdk-unstable = {
+          package = unstable.jdk;
+          priority = 5;
+        };
+        test = {
+          package = pkgs.jdk11;
+          priority = 6;
+        };
+      };
+    };
     firefox.enable = true;
     python.enable = true;
     latex.enable = true;
