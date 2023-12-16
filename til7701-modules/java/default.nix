@@ -1,42 +1,54 @@
 { lib, config, pkgs, ... }:
 
-let
-  cfg = config.til7701.java;
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-
-  setPriority = index: pkg:
-    pkg.overrideAttrs (oldAttrs: {
-      meta.priority = index + 1;
-    });
-  createLinks = pkg: {
-    "${pkg}/lib/openjdk" = lib.cleanSource pkg;
-  };
-
-  JDKsWithPriority = lib.lists.map setPriority cfg.packages;
-  links = lib.lists.map createLinks JDKsWithPriority;
-  defaultJDK = lib.head JDKsWithPriority;
-in {
-
-  options.til7701.java = {
-    enable = lib.mkEnableOption "java";
-    packages = lib.mkOption {
-      type = lib.types.listOf lib.types.package;
-      default = [
-        pkgs.jdk21
-        pkgs.jdk17
-      ];
+{
+  options.til7701.java = lib.mkOption {
+    default = {
+      jdk21 = {
+        default = true;
+        package = pkgs.jdk21;
+        priority = 1;
+      };
     };
-  };
+    type = with lib.types; attrsOf (submodule (
+      { name, config, options, ... }:
+      let
+        cfg = config.til7701.java;
+        custom-jdk = cfg.package.overrideAttrs (oldAttrs: {
+          meta.priority = cfg.priority;
+        });
+      in { 
+        options = {
+          enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = lib.mdDoc "Wether this jdk should be installed";
+          };
+          default = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = lib.mdDoc "Whether this jdk should be the default";
+          };
+          package = lib.mkOption {
+            type = lib.types.package;
+            description = lib.mdDoc "Package to install for this jdk";
+          };
+          priority = lib.mkOption {
+            default = 5;
+            type = lib.types.int;
+            description = lib.mdDoc "Priority of this jdk. Lower number is higher priority";
+          };
+        };
 
-  config = lib.mkIf cfg.enable {
-    environment.systemPackages = JDKsWithPriority;
+        config = lib.mkIf cfg.enable {
+          environment.systemPackages = custom-jdk;
 
-    environment.etc."_til7701/java" = {
-      inherit links;
-    };
+          environment.variables = lib.mkIf cfg.default {
+            JAVA_HOME = "${custom-jdk.home}/lib/openjdk";
+          };
 
-    environment.variables = {
-      JAVA_HOME = "${defaultJDK}/lib/openjdk";
-    };
+          environment.etc."_til7701/java/${name}".source = "${custom-jdk}/lib/openjdk";
+        };
+      }
+    ));
   };
 }
