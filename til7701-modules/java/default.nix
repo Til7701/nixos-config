@@ -4,14 +4,21 @@ let
   cfg = config.til7701.java;
 
   custom-jdks = lib.concatMapAttrs (name: value: {
-    ${name} = value.package.overrideAttrs (oldAttrs: {
-      meta.priority = value.priority;
-    });
+    ${name} = {
+      default = value.default;
+      package = value.package.overrideAttrs (oldAttrs: {
+        meta.priority = value.priority;
+      });
+    };
   }) cfg.jdks;
 
   links = lib.concatMapAttrs (name: value: {
-    "_til7701/java/${name}".source = "${value}/lib/openjdk";
+    "_til7701/java/${name}".source = "${value.package}/lib/openjdk";
   }) custom-jdks;
+
+  envVar = lib.concatMapAttrs (name: value: {
+    JAVA_HOME = "${value.package}/lib/openjdk";
+  }) (lib.filterAttrs (n: v: v.default) custom-jdks);
 in {
   options.til7701.java = {
     enable = lib.mkEnableOption "java";
@@ -27,11 +34,6 @@ in {
         { name, config, options, ... }:
         { 
           options = {
-            enable = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-              description = lib.mdDoc "Wether this jdk should be installed";
-            };
             default = lib.mkOption {
               type = lib.types.bool;
               default = false;
@@ -53,9 +55,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = lib.attrValues custom-jdks;
-
+    environment.systemPackages = lib.attrValues (lib.concatMapAttrs (name: value: {
+      ${name} = value.package;
+    }) custom-jdks);
+    environment.variables = envVar;
     environment.etc = links;
   };
-
 }
