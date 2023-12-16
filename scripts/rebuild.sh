@@ -7,7 +7,7 @@ then
     echo    # move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        sudo nixos-rebuild -v switch -I nixos-config=/home/tilman/nixos-config/T07LY9i.nix
+        sudo nixos-rebuild switch -I nixos-config=/home/tilman/nixos-config/T07LY9i.nix
     fi
 else
     echo "Unknown hostname $name"
