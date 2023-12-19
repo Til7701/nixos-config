@@ -9,5 +9,6 @@
     ./firefox
     ./python
     ./latex
+    ./rust
   ];
 }

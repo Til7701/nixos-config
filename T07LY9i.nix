@@ -49,6 +49,7 @@ in {
     firefox.enable = true;
     python.enable = true;
     latex.enable = true;
+    rust.enable = true;
   };
 
   # This value determines the NixOS release from which the default
