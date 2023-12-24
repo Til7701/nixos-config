@@ -10,8 +10,13 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.jetbrains.rust-rover
+      pkgs.rustup
       pkgs.rustc
+      pkgs.rustfmt
+      pkgs.clippy
       pkgs.cargo
+      pkgs.gcc
+      pkgs.llvmPackages.bintools
     ];
   };
 }
