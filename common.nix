@@ -117,6 +117,10 @@ in {
       xorg.libX11
       xorg.libXtst
       xorg.libXxf86vm
+      libGL
+      mesa
+
+      pdfarranger
 
       # utils
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -127,7 +131,12 @@ in {
     ];
 
     environment.variables = {
-      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:$LD_LIBRARY_PATH";
+      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:${pkgs.libGL}/lib:${pkgs.mesa}/lib:$LD_LIBRARY_PATH";
+    };
+
+    hardware.opengl = {
+      enable = true;
+      driSupport = true;
     };
     
     virtualisation.docker.enable = true;

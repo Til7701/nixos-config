@@ -16,7 +16,14 @@ in {
       pkgs.clippy
       pkgs.cargo
       pkgs.gcc
-      pkgs.llvmPackages.bintools
+      pkgs.llvmPackages_latest.bintools
+      pkgs.openssl
+      pkgs.pkg-config
     ];
+    environment.variables = {
+      OPENSSL_DIR = "${pkgs.openssl.dev}";
+      OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
+      RUST_BACKTRACE = "1";
+    };
   };
 }
