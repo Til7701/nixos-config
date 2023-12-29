@@ -50,6 +50,7 @@ in {
     python.enable = true;
     latex.enable = true;
     rust.enable = true;
+    fx-demo.enable = true;
   };
 
   # This value determines the NixOS release from which the default
