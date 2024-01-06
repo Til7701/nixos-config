@@ -27,13 +27,32 @@ Currently `/org/gnome/desktop`, `/org/gnome/shell`, `/org/gnome/mutter` and
 3. add the new file to the imports in `home-manager.users.${config.til7701.user}.imports`
 
 ## Java
-The java module is installing multiple versions. JDK 21 is the default. 
-All the other versions are available in `/etc/_til7701/java`.
-
-To add another version, go to `til7701-modules/java/default.nix` and add the version as a custom package.
-The priorities are overwritten to ensure there are no collisions between versions. 
-Then add the custom packages to the `systemPackages` and set the default JDK as `JAVA_HOME`.
-To make the JDK available via a static path, add it to the `environment.etc."..."`
+Install multiple JDKs with different priorities.
+```nix
+til7701 = {
+    java = {
+      enable = true;
+      jdks = {
+        jdk21 = {
+          package = pkgs.jdk21;
+          priority = 1;
+        };
+        jdk17 = {
+          package = pkgs.jdk17;
+          priority = 2;
+        };
+        jdk-latest-lts = {
+          package = pkgs.jdk21;
+          priority = 3;
+        };
+        jdk-stable = {
+          package = pkgs.jdk;
+          priority = 4;
+        };
+      };
+    };
+};
+```
 
 ## Python
 There is one global python installation. You can add python packages to the my-python package to install them globally.

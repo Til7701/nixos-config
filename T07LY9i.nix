@@ -22,7 +22,6 @@ in {
       enable = true;
       jdks = {
         jdk21 = {
-          default = true;
           package = pkgs.jdk21;
           priority = 1;
         };
@@ -30,7 +29,7 @@ in {
           package = pkgs.jdk17;
           priority = 2;
         };
-        latest-lts = {
+        jdk-latest-lts = {
           package = pkgs.jdk21;
           priority = 3;
         };
@@ -41,10 +40,6 @@ in {
         jdk-unstable = {
           package = unstable.jdk;
           priority = 5;
-        };
-        test = {
-          package = pkgs.jdk11;
-          priority = 6;
         };
       };
     };

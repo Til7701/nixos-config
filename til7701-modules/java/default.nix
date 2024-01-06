@@ -5,7 +5,7 @@ let
 
   custom-jdks = lib.concatMapAttrs (name: value: {
     ${name} = {
-      default = value.default;
+      priority = value.priority;
       package = value.package.overrideAttrs (oldAttrs: {
         meta.priority = value.priority;
       });
@@ -16,29 +16,16 @@ let
     "_til7701/java/${name}".source = "${value.package}/lib/openjdk";
   }) custom-jdks;
 
-  envVar = lib.concatMapAttrs (name: value: {
-    JAVA_HOME = "${value.package}/lib/openjdk";
-  }) (lib.filterAttrs (n: v: v.default) custom-jdks);
+  default-jdk = (lib.head (lib.sort (a: b: a.priority < b.priority) (lib.attrValues custom-jdks))).package;
 in {
   options.til7701.java = {
     enable = lib.mkEnableOption "java";
     jdks = lib.mkOption {
-      default = {
-        jdk21 = {
-          default = true;
-          package = pkgs.jdk21;
-          priority = 1;
-        };
-      };
+      default = {};
       type = with lib.types; attrsOf (submodule (
         { name, config, options, ... }:
         { 
           options = {
-            default = lib.mkOption {
-              type = lib.types.bool;
-              default = false;
-              description = lib.mdDoc "Whether this jdk should be the default";
-            };
             package = lib.mkOption {
               type = lib.types.package;
               description = lib.mdDoc "Package to install for this jdk";
@@ -58,7 +45,11 @@ in {
     environment.systemPackages = lib.attrValues (lib.concatMapAttrs (name: value: {
       ${name} = value.package;
     }) custom-jdks);
-    environment.variables = envVar;
+
+    environment.variables = {
+      JAVA_HOME = "${default-jdk}/lib/openjdk";
+    };
+
     environment.etc = links;
   };
 }
