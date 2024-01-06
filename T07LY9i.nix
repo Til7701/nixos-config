@@ -2,12 +2,14 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  #tilpkgs = import <til7701/packages> {};
 in {
-  imports =[
+  imports = [
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
     ./T07LY9i/configuration.nix
     ./til7701-modules
+    <til7701/modules>
   ];
 
   til7701 = {
@@ -52,6 +54,14 @@ in {
     rust.enable = true;
     fx-demo.enable = true;
   };
+
+  #environment.systemPackages = [
+  #  tilpkgs.fx-demo
+  #];
+
+  nix.extraOptions = ''
+    tarball-ttl = 0
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

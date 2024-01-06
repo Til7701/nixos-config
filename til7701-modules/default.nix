@@ -10,6 +10,5 @@
     ./python
     ./latex
     ./rust
-    ./fx-demo
   ];
 }
