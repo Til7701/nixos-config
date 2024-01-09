@@ -4,6 +4,7 @@
   imports =[
     ./username
     ./java
+    ./javafx-libs
     ./zsh
     ./gnome
     ./firefox

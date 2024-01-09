@@ -113,13 +113,6 @@ in {
     
     environment.systemPackages = with pkgs; [
       git
-      ## for using javafx
-      xorg.libX11
-      xorg.libXtst
-      xorg.libXxf86vm
-      libGL
-      mesa
-      alsa-lib
 
       pdfarranger
 
@@ -130,10 +123,6 @@ in {
       nodejs
       neofetch
     ];
-
-    environment.variables = {
-      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:${pkgs.libGL}/lib:${pkgs.mesa}/lib:${pkgs.alsa-lib}/lib:$LD_LIBRARY_PATH";
-    };
 
     hardware.opengl = {
       enable = true;

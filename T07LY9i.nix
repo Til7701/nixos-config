@@ -43,6 +43,7 @@ in {
         };
       };
     };
+    javafx-libs.enable = true;
     firefox.enable = true;
     python.enable = true;
     latex.enable = true;
