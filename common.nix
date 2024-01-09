@@ -119,6 +119,7 @@ in {
       xorg.libXxf86vm
       libGL
       mesa
+      alsa-lib
 
       pdfarranger
 
@@ -131,7 +132,7 @@ in {
     ];
 
     environment.variables = {
-      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:${pkgs.libGL}/lib:${pkgs.mesa}/lib:$LD_LIBRARY_PATH";
+      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:${pkgs.libGL}/lib:${pkgs.mesa}/lib:${pkgs.alsa-lib}/lib:$LD_LIBRARY_PATH";
     };
 
     hardware.opengl = {
