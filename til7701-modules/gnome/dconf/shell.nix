@@ -38,10 +38,14 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/just-perfection" = {
       clock-menu-position-offset = 0;
+      controls-manager-spacing-size = 2;
       dash-icon-size = 40;
       panel-button-padding-size = 6;
+      panel-icon-size = 0;
       panel-indicator-padding-size = 1;
+      panel-size = 0;
       startup-status = 0;
+      theme = false;
       weather = false;
     };
 

@@ -101,6 +101,10 @@ with lib.hm.gvariant;
       application-id = "firefox.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/gimp" = {
+      application-id = "gimp.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/gnome-network-panel" = {
       application-id = "gnome-network-panel.desktop";
     };
@@ -109,8 +113,24 @@ with lib.hm.gvariant;
       application-id = "gnome-power-panel.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/idea-ultimate" = {
+      application-id = "idea-ultimate.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-baobab" = {
+      application-id = "org.gnome.baobab.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-characters" = {
+      application-id = "org.gnome.Characters.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-gnome-console" = {
       application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-fileroller" = {
+      application-id = "org.gnome.FileRoller.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
@@ -127,6 +147,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/owncloud" = {
       application-id = "owncloud.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/signal-desktop" = {
+      application-id = "signal-desktop.desktop";
     };
 
     "org/gnome/desktop/notifications/application/thunderbird" = {
