@@ -2,6 +2,16 @@
 
 let
   cfg = config.til7701.javafx-libs;
+
+  lib-pkgs = with pkgs; [
+    xorg.libX11
+    xorg.libXtst
+    xorg.libXxf86vm
+    libGL
+    mesa
+    alsa-lib
+  ];
+  paths = (lib.foldr (a: b: a + b) "$LD_LIBRARY_PATH") (lib.lists.map (a: a + "/lib:") lib-pkgs);
 in {
 
   options.til7701.javafx-libs = {
@@ -9,17 +19,8 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      xorg.libX11
-      xorg.libXtst
-      xorg.libXxf86vm
-      libGL
-      mesa
-      alsa-lib
-    ];
+    environment.systemPackages = lib-pkgs;
 
-    environment.variables = {
-      LD_LIBRARY_PATH = "${pkgs.xorg.libX11}/lib:${pkgs.xorg.libXtst}/lib:${pkgs.xorg.libXxf86vm}/lib:${pkgs.libGL}/lib:${pkgs.mesa}/lib:${pkgs.alsa-lib}/lib:$LD_LIBRARY_PATH";
-    };
+    environment.variables.LD_LIBRARY_PATH = paths;
   };
 }

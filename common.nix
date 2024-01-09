@@ -78,7 +78,7 @@ in {
           jetbrains.pycharm-community
           obsidian
           spotify
-          unstable.discord
+          discord
           xournalpp
           libreoffice
           gimp
@@ -94,7 +94,7 @@ in {
     nixpkgs.config = {
       allowUnfree = true;
       permittedInsecurePackages = [
-        "electron-25.9.0"
+        "electron-25.9.0" # https://github.com/NixOS/nixpkgs/issues/273611
       ];
     };
     nix.settings.auto-optimise-store = true;
@@ -113,10 +113,7 @@ in {
     
     environment.systemPackages = with pkgs; [
       git
-
       pdfarranger
-
-      # utils
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       htop
@@ -128,8 +125,6 @@ in {
       enable = true;
       driSupport = true;
     };
-    
-    virtualisation.docker.enable = true;
 
     nixpkgs.overlays = let
       nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
