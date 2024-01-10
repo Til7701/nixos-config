@@ -47,7 +47,7 @@ in {
     firefox.enable = true;
     python.enable = true;
     latex.enable = true;
-    rust.enable = true;
+    rust.enable = false;
     fx-demo.enable = true;
   };
 
