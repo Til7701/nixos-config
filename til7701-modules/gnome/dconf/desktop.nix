@@ -77,7 +77,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" ];
+      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" ];
       show-banners = true;
     };
 

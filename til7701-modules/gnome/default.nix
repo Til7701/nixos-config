@@ -45,7 +45,7 @@ in {
       gnomeExtensions.vitals
       gnomeExtensions.appindicator
       gnomeExtensions.dash-to-dock
-      gnomeExtensions.clipboard-history
+      gnomeExtensions.clipboard-indicator
     ];
 
     programs.dconf.enable = true;
