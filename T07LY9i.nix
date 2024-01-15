@@ -49,6 +49,7 @@ in {
     latex.enable = true;
     rust.enable = false;
     fx-demo.enable = true;
+    noel.enable = true;
   };
 
   #environment.systemPackages = [
