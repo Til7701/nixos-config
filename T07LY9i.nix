@@ -29,17 +29,13 @@ in {
           package = pkgs.jdk17;
           priority = 2;
         };
-        jdk-latest-lts = {
-          package = pkgs.jdk21;
-          priority = 3;
-        };
         jdk-stable = {
           package = pkgs.jdk;
-          priority = 4;
+          priority = 3;
         };
         jdk-unstable = {
           package = unstable.jdk;
-          priority = 5;
+          priority = 4;
         };
       };
     };
