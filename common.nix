@@ -82,10 +82,13 @@ in {
           xournalpp
           libreoffice
           gimp
-          vscode
-          vscode-extensions.rust-lang.rust-analyzer
-          vscode-extensions.serayuzgur.crates
-          vscode-extensions.bbenoist.nix
+          (vscode-with-extensions.override {
+            vscodeExtensions = with vscode-extensions; [
+              bbenoist.nix
+              rust-lang.rust-analyzer
+              serayuzgur.crates
+            ];
+          })
           inkscape
           chromium
           stellarium

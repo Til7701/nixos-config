@@ -8,17 +8,17 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.jetbrains.rust-rover
-      pkgs.rustup
-      pkgs.rustc
-      pkgs.rustfmt
-      pkgs.clippy
-      pkgs.cargo
-      pkgs.gcc
-      pkgs.llvmPackages_latest.bintools
-      pkgs.openssl
-      pkgs.pkg-config
+    environment.systemPackages = with pkgs; [
+      jetbrains.rust-rover
+      rustup
+      rustc
+      rustfmt
+      clippy
+      cargo
+      gcc
+      llvmPackages_latest.bintools
+      openssl
+      pkg-config
     ];
     environment.variables = {
       OPENSSL_DIR = "${pkgs.openssl.dev}";
