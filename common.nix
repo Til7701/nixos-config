@@ -83,6 +83,9 @@ in {
           libreoffice
           gimp
           vscode
+          vscode-extensions.rust-lang.rust-analyzer
+          vscode-extensions.serayuzgur.crates
+          vscode-extensions.bbenoist.nix
           inkscape
           chromium
           stellarium
