@@ -1,3 +1,5 @@
+#!/bin/sh
+
 name=$(hostname)
 
 if [[ $name = "T07LY9i" ]]

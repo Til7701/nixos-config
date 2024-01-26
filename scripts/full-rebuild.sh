@@ -1,3 +1,5 @@
+#!/bin/sh
+
 /home/tilman/nixos-config/scripts/rebuild.sh
 dconf reset -f /org/gnome/desktop
 dconf reset -f /org/gnome/shell
