@@ -46,6 +46,7 @@ in {
     rust.enable = false;
     fx-demo.enable = true;
     noel.enable = true;
+    android.enable = true;
   };
 
   #environment.systemPackages = [

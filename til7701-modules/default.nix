@@ -2,6 +2,7 @@
 
 {
   imports =[
+    ./android
     ./username
     ./java
     ./javafx-libs
