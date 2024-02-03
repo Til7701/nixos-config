@@ -66,7 +66,7 @@ in {
       ${config.til7701.user} = {
         isNormalUser = true;
         description = "Tilman";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "adbusers" ];
         packages = with pkgs; [
           thunderbird
           keepassxc
