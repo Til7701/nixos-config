@@ -10,7 +10,7 @@ with lib.hm.gvariant;
       disabled-extensions = [ "launch-new-instance@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "color-picker@tuberry" "date-menu-formatter@marcinjakubowski.github.com" "just-perfection-desktop@just-perfection" "drive-menu@gnome-shell-extensions.gcampax.github.com" "Vitals@CoreCoding.com" "dash-to-dock@micxgx.gmail.com" "clipboard-indicator@tudmotu.com" ];
       favorite-apps = [ "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "thunderbird.desktop" "org.keepassxc.KeePassXC.desktop" "discord.desktop" "spotify.desktop" "obsidian.desktop" "com.github.xournalpp.xournalpp.desktop" ];
-      last-selected-power-profile = "power-saver";
+      last-selected-power-profile = "performance";
       welcome-dialog-last-shown-version = "44.2";
     };
 
@@ -51,15 +51,6 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/vitals" = {
       hot-sensors = [ "__temperature_max__" ];
-    };
-
-    "org/gnome/shell/weather" = {
-      automatic-location = true;
-      locations = "[<(uint32 2, <('Bremen', 'EDDW', false, [(0.92589716818299184, 0.15358897417550102)], @a(dd) [])>)>]";
-    };
-
-    "org/gnome/shell/world-clocks" = {
-      locations = "[<(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>]";
     };
 
   };
