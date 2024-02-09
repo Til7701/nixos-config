@@ -3,7 +3,8 @@
 let
   cfg = config.til7701.common;
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
+in
+{
 
   imports = [
     <home-manager/nixos>
@@ -84,11 +85,12 @@ in {
           gimp
           (vscode-with-extensions.override {
             vscodeExtensions = with vscode-extensions; [
-              bbenoist.nix
+              jnoortheen.nix-ide
               rust-lang.rust-analyzer
               serayuzgur.crates
             ];
           })
+          nixpkgs-fmt
           inkscape
           chromium
           stellarium
@@ -116,7 +118,7 @@ in {
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
-    
+
     environment.systemPackages = with pkgs; [
       git
       pdfarranger
@@ -132,15 +134,17 @@ in {
       driSupport = true;
     };
 
-    nixpkgs.overlays = let
-      nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
-    in [
-      nix-matlab.overlay
-      (
-        final: prev: {
-          # Your own overlays...
-        }
-      )
-    ];
+    nixpkgs.overlays =
+      let
+        nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
+      in
+      [
+        nix-matlab.overlay
+        (
+          final: prev: {
+            # Your own overlays...
+          }
+        )
+      ];
   };
 }

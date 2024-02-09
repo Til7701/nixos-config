@@ -12,5 +12,6 @@
     ./python
     ./latex
     ./rust
+    ./shortcuts
   ];
 }

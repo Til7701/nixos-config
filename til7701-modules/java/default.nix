@@ -3,28 +3,33 @@
 let
   cfg = config.til7701.java;
 
-  custom-jdks = lib.concatMapAttrs (name: value: {
-    ${name} = {
-      priority = value.priority;
-      package = value.package.overrideAttrs (oldAttrs: {
-        meta.priority = value.priority;
-      });
-    };
-  }) cfg.jdks;
+  custom-jdks = lib.concatMapAttrs
+    (name: value: {
+      ${name} = {
+        priority = value.priority;
+        package = value.package.overrideAttrs (oldAttrs: {
+          meta.priority = value.priority;
+        });
+      };
+    })
+    cfg.jdks;
 
-  links = lib.concatMapAttrs (name: value: {
-    "_til7701/java/${name}".source = "${value.package}/lib/openjdk";
-  }) custom-jdks;
+  links = lib.concatMapAttrs
+    (name: value: {
+      "_til7701/java/${name}".source = "${value.package}/lib/openjdk";
+    })
+    custom-jdks;
 
   default-jdk = (lib.head (lib.sort (a: b: a.priority < b.priority) (lib.attrValues custom-jdks))).package;
-in {
+in
+{
   options.til7701.java = {
     enable = lib.mkEnableOption "java";
     jdks = lib.mkOption {
-      default = {};
+      default = { };
       type = with lib.types; attrsOf (submodule (
         { name, config, options, ... }:
-        { 
+        {
           options = {
             package = lib.mkOption {
               type = lib.types.package;
@@ -38,13 +43,15 @@ in {
           };
         }
       ));
-    };  
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = lib.attrValues (lib.concatMapAttrs (name: value: {
-      ${name} = value.package;
-    }) custom-jdks);
+    environment.systemPackages = lib.attrValues (lib.concatMapAttrs
+      (name: value: {
+        ${name} = value.package;
+      })
+      custom-jdks);
 
     environment.variables = {
       JAVA_HOME = "${default-jdk}/lib/openjdk";

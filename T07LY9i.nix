@@ -3,7 +3,8 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   #tilpkgs = import <til7701/packages> {};
-in {
+in
+{
   imports = [
     ./common.nix
     ./T07LY9i/hardware-configuration.nix
@@ -47,6 +48,7 @@ in {
     fx-demo.enable = true;
     noel.enable = true;
     android.enable = true;
+    shortcuts.enable = true;
   };
 
   #environment.systemPackages = [
