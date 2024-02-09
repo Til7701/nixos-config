@@ -47,6 +47,8 @@ with lib.hm.gvariant;
       startup-status = 0;
       theme = false;
       weather = false;
+      panel-in-overview = true;
+      panel = false;
     };
 
     "org/gnome/shell/extensions/vitals" = {
