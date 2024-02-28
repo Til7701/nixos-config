@@ -77,7 +77,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" ];
+      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" ];
       show-banners = true;
     };
 
@@ -127,6 +127,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-console" = {
       application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-evince" = {
+      application-id = "org.gnome.Evince.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-fileroller" = {
