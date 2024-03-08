@@ -73,7 +73,7 @@ in
           keepassxc
           nextcloud-client
           owncloud-client
-          unstable.jetbrains.idea-ultimate
+          (unstable.jetbrains.plugins.addPlugins unstable.jetbrains.idea-ultimate [ "github-copilot" ])
           jetbrains.idea-community
           jetbrains.phpstorm
           jetbrains.pycharm-community
