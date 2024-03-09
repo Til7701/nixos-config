@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  imports =[
-    ./android
-    ./username
-    ./java
-    ./javafx-libs
-    ./zsh
-    ./gnome
+  imports = [
     ./firefox
-    ./python
-    ./latex
-    ./rust
+    ./gnome
     ./shortcuts
+    ./zsh
+    ./android.nix
+    ./java.nix
+    ./javafx-libs.nix
+    ./latex.nix
+    ./python.nix
+    ./rust.nix
+    ./username.nix
   ];
 }
