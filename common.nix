@@ -129,6 +129,7 @@ in
       bat
       tldr
       nodejs
+      dpkg # for opening .deb packages, not for installing them
       neofetch
     ];
 
