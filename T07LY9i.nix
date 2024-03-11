@@ -38,6 +38,10 @@ in
           package = unstable.jdk;
           priority = 4;
         };
+        jdk8 = {
+          package = pkgs.jdk8;
+          priority = 10;
+        };
       };
     };
     javafx-libs.enable = true;
