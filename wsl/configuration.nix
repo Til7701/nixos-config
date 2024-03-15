@@ -3,7 +3,6 @@
 {
   imports = [
     <nixos-wsl/modules>
-    ./til7701-modules
   ];
 
   wsl = {
