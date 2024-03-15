@@ -6,6 +6,8 @@ in
 {
   networking.hostName = "T07LY9i";
 
+  services.thermald.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
