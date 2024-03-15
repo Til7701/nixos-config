@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./wsl/configuration.nix
+    ./til7701-modules/username.nix
     ./til7701-modules/zsh
     ./til7701-modules/java.nix
   ];
