@@ -7,7 +7,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = ${config.til7701.user};
+    defaultUser = "${config.til7701.user}";
     wslConf.network.hostname = "wsl";
   };
 
