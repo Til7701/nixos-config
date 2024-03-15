@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ../default-core.nix
+    ./default-core.nix
     ../common.nix
     ../java.nix
   ];
