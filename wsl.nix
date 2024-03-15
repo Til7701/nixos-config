@@ -5,7 +5,8 @@ in
 {
   imports = [
     ./wsl/configuration.nix
-    ./til7701-modules
+    ./til7701-modules/zsh
+    ./til7701-modules/java
   ];
 
   til7701 = {
