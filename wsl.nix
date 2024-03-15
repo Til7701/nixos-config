@@ -4,15 +4,17 @@ let
 in
 {
   imports = [
-    ./wsl/configuration.nix
-    ./til7701-modules/username.nix
-    ./til7701-modules/zsh
-    ./til7701-modules/java.nix
+    ./hosts/wsl/configuration.nix
+    ./til7701-modules/_top-level/default-headless.nix
   ];
 
   til7701 = {
     user = "tilman";
+    common.enable = true;
+
     zsh.enable = true;
+    cli-tools.enable = true;
+
     java = {
       enable = true;
       jdks = {
@@ -31,11 +33,6 @@ in
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    git
-    gh
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

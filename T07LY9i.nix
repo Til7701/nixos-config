@@ -6,19 +6,32 @@ let
 in
 {
   imports = [
-    ./common.nix
-    ./T07LY9i/hardware-configuration.nix
-    ./T07LY9i/configuration.nix
-    ./til7701-modules
+    ./hosts/T07LY9i/hardware-configuration.nix
+    ./hosts/T07LY9i/configuration.nix
+    ./til7701-modules/_top-level
     <til7701/modules>
   ];
 
   til7701 = {
     user = "tilman";
-
     common.enable = true;
-    gnome.enable = true;
+    common-desktop.enable = true;
+    local.enable = true;
+
     zsh.enable = true;
+    cli-tools.enable = true;
+
+    gnome.enable = true;
+    shortcuts.enable = true;
+    desktop-core.enable = true;
+    firefox.enable = true;
+    matlab-overlay.enable = true;
+
+    printing.enable = true;
+    sound.enable = true;
+
+    develop.enable = true;
+    android.enable = true;
     java = {
       enable = true;
       jdks = {
@@ -45,14 +58,15 @@ in
       };
     };
     javafx-libs.enable = true;
-    firefox.enable = true;
     python.enable = true;
-    latex.enable = true;
     rust.enable = false;
+
+    latex.enable = true;
+
+    opengl.enable = true;
+
     fx-demo.enable = true;
     noel.enable = true;
-    android.enable = true;
-    shortcuts.enable = true;
   };
 
   #environment.systemPackages = [
