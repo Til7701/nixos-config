@@ -5,7 +5,8 @@ let
 
   scriptsDir = ../../scripts;
   customDir = ./custom;
-in {
+in
+{
 
   options.til7701.zsh = {
     enable = lib.mkEnableOption "zsh";
@@ -30,7 +31,7 @@ in {
         enable = true;
         custom = "${customDir}";
         plugins = [ "git" ];
-        theme = "tilman";
+        theme = "tilman-min";
       };
     };
   };

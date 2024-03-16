@@ -2,7 +2,8 @@
 
 let
   cfg = config.til7701.gnome;
-in {
+in
+{
 
   options.til7701.gnome = {
     enable = lib.mkEnableOption "gnome";
@@ -15,7 +16,7 @@ in {
     # Enable the GNOME Desktop Environment.
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
-    
+
     # Configure keymap in X11
     services.xserver = {
       layout = "de";
@@ -27,10 +28,10 @@ in {
     };
 
     services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-    
+
     environment.gnome.excludePackages = with pkgs.gnome; [
       epiphany # web browser
-      geary    # email client
+      geary # email client
     ];
 
     environment.systemPackages = with pkgs; [
@@ -49,5 +50,7 @@ in {
     ];
 
     programs.dconf.enable = true;
+
+    programs.gnome-terminal.enable = true;
   };
 }
