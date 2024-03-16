@@ -24,7 +24,7 @@ in
     };
 
     home-manager.users.${config.til7701.user} = { pkgs, ... }: {
-      imports = [ ./dconf/desktop.nix ./dconf/shell.nix ./dconf/mutter.nix ./dconf/media-keys.nix ];
+      imports = [ ./dconf/desktop.nix ./dconf/shell.nix ./dconf/mutter.nix ./dconf/media-keys.nix ./dconf/terminal.nix ];
     };
 
     services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
