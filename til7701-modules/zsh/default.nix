@@ -31,7 +31,7 @@ in
         enable = true;
         custom = "${customDir}";
         plugins = [ "git" ];
-        theme = "tilman-min";
+        theme = "tilman-verbose";
       };
     };
   };
