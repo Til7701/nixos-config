@@ -2,7 +2,7 @@
 # based on af-magic.zsh-theme
 
 function default_color() {
-    echo "${FG[007]}"
+    echo "${FG[014]}"
 }
 
 function accent_color() {
