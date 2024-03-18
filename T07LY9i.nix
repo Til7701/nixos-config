@@ -2,14 +2,15 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  #tilpkgs = import <til7701/packages> {};
+  #tilpkgs = import <til7701> { };
+  schlunzpkgs = import <schlunzis> { };
 in
 {
   imports = [
     ./hosts/T07LY9i/hardware-configuration.nix
     ./hosts/T07LY9i/configuration.nix
     ./til7701-modules/_top-level
-    <til7701/modules>
+    #<til7701>
   ];
 
   til7701 = {
@@ -65,13 +66,15 @@ in
 
     opengl.enable = true;
 
-    fx-demo.enable = true;
-    noel.enable = true;
+    #fx-demo.enable = true;
+    #noel.enable = true;
   };
 
-  #environment.systemPackages = [
-  #  tilpkgs.fx-demo
-  #];
+  environment.systemPackages = [
+    #  tilpkgs.fx-demo
+    #  tilpkgs.noel
+    schlunzpkgs.kurtama-client
+  ];
 
   nix.extraOptions = ''
     tarball-ttl = 0
