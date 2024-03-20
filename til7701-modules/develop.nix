@@ -33,6 +33,8 @@ in
     environment.systemPackages = with pkgs; [
       nodejs
       dpkg # for opening .deb packages, not for installing them
+      apt # for testing PPAs and such things, not for installing anything
+      fakeroot # jpackage likes this
     ];
 
   };
