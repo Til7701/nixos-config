@@ -36,6 +36,10 @@ in
     java = {
       enable = true;
       jdks = {
+        jdk22 = {
+          package = unstable.jdk22;
+          priority = 5;
+        };
         jdk21 = {
           package = pkgs.jdk21;
           priority = 1;
