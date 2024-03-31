@@ -14,7 +14,8 @@ in
     users.users = {
       ${config.til7701.user} = {
         packages = with pkgs; [
-          (unstable.jetbrains.plugins.addPlugins unstable.jetbrains.idea-ultimate [ "github-copilot" ])
+          #(unstable.jetbrains.plugins.addPlugins unstable.jetbrains.idea-ultimate [ "github-copilot" ])
+          (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [ "github-copilot" ])
           jetbrains.idea-community
           jetbrains.phpstorm
           jetbrains.pycharm-community
