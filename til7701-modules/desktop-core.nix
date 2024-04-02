@@ -19,7 +19,7 @@ in
           nextcloud-client
           owncloud-client
           #unstable.obsidian
-          #obsidian
+          obsidian
           spotify
           discord
           libreoffice

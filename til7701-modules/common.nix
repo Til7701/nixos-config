@@ -18,7 +18,7 @@ in
     nixpkgs.config = {
       allowUnfree = true;
       permittedInsecurePackages = [
-        #"electron-25.9.0" # https://github.com/NixOS/nixpkgs/issues/273611
+        "electron-25.9.0" # https://github.com/NixOS/nixpkgs/issues/273611
       ];
     };
     nix.settings.auto-optimise-store = true;
