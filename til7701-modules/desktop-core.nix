@@ -18,8 +18,7 @@ in
           keepassxc
           nextcloud-client
           owncloud-client
-          #unstable.obsidian
-          obsidian
+          unstable.obsidian
           spotify
           discord
           libreoffice

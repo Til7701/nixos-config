@@ -36,10 +36,10 @@ in
     java = {
       enable = true;
       jdks = {
-        # jdk22 = {
-        #   package = unstable.jdk22;
-        #   priority = 5;
-        # };
+        jdk22 = {
+          package = unstable.jdk22;
+          priority = 5;
+        };
         jdk21 = {
           package = pkgs.jdk21;
           priority = 1;
@@ -52,10 +52,10 @@ in
           package = pkgs.jdk;
           priority = 3;
         };
-        # jdk-unstable = {
-        #   package = unstable.jdk;
-        #   priority = 4;
-        # };
+        jdk-unstable = {
+          package = unstable.jdk;
+          priority = 4;
+        };
         jdk8 = {
           package = pkgs.jdk8;
           priority = 10;
