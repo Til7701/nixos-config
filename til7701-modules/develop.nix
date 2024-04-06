@@ -23,6 +23,8 @@ in
               jnoortheen.nix-ide
               rust-lang.rust-analyzer
               serayuzgur.crates
+              ms-python.python
+              ms-toolsai.jupyter
             ];
           })
           nixpkgs-fmt
