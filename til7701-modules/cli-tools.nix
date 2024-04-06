@@ -17,6 +17,7 @@ in
       htop
       btop
       bat
+      jq
       tldr
       neofetch
     ];

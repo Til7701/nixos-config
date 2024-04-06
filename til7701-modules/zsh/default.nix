@@ -25,6 +25,7 @@ in
         t-update = "${scriptsDir}/update.sh";
         t-collect-garbage = "${scriptsDir}/collect-garbage.sh";
         t-gnome-settings = "${scriptsDir}/gnome-settings.sh";
+        t-git-backup = "${scriptsDir}/git-backup.sh";
         t-arbi = "ssh holube@duemmer.informatik.uni-oldenburg.de";
       };
       ohMyZsh = {
