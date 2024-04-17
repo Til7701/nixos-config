@@ -39,6 +39,7 @@ in
       fakeroot # jpackage likes this
     ];
 
+    environment.etc."_til7701/js/node".source = "${pkgs.nodejs}/";
   };
 
 }

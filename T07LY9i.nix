@@ -2,7 +2,7 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  #tilpkgs = import <til7701> { };
+  tilpkgs = import <til7701> { };
   schlunzpkgs = import <schlunzis> { };
 in
 {
@@ -75,8 +75,8 @@ in
   };
 
   environment.systemPackages = [
-    #  tilpkgs.fx-demo
-    #  tilpkgs.noel
+    #tilpkgs.fx-demo
+    tilpkgs.noel
     schlunzpkgs.kurtama-client
   ];
 
