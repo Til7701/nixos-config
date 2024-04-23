@@ -2,6 +2,7 @@
 
 let
   cfg = config.til7701.gnome;
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
 
@@ -35,9 +36,29 @@ in
     ];
 
     environment.systemPackages = with pkgs; [
-      dconf2nix # https://github.com/gvolpe/dconf2nix
+      dconf2nix # https://github.com/nix-community/dconf2nix
 
       gnome.gnome-tweaks
+      gnome.ghex
+      gnome.atomix
+      gnome.dconf-editor
+      gnome-latex
+      gnome-podcasts
+      gnome-obfuscate
+      gnome-decoder
+      metadata-cleaner
+      webfontkitgenerator
+      #citations build failed
+      elastic
+      emblem
+      eyedropper
+      gaphor
+      identity
+      plots
+      wike
+      unstable.switcheroo
+      unstable.railway-travel
+      unstable.paper-clip
 
       # gnomeExtensions.color-picker need a new one
       gnomeExtensions.date-menu-formatter
