@@ -13,6 +13,7 @@
     ../common.nix
     ../desktop-core.nix
     ../develop.nix
+    ../gaming.nix
     ../java.nix
     ../javafx-libs.nix
     ../latex.nix
