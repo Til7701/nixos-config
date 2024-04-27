@@ -16,6 +16,8 @@
     useOSProber = true;
   };
 
+  time.hardwareClockInLocalTime = true;
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.opengl = {
