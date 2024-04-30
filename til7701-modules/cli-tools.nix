@@ -19,7 +19,7 @@ in
       bat
       jq
       tldr
-      neofetch
+      hyfetch
     ];
   };
 

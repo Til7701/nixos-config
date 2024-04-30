@@ -59,6 +59,7 @@ in
       unstable.switcheroo
       unstable.railway-travel
       unstable.paper-clip
+      impression
 
       # gnomeExtensions.color-picker need a new one
       gnomeExtensions.date-menu-formatter
