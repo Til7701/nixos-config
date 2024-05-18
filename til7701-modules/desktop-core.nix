@@ -29,6 +29,7 @@ in
           stellarium
           signal-desktop
           pdfarranger
+          calibre
         ];
       };
     };

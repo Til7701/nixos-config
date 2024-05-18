@@ -9,7 +9,7 @@ then
     echo    # move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        sudo nixos-rebuild switch -I nixos-config=/home/tilman/nixos-config/T07LY9i.nix
+        sudo time nixos-rebuild switch -I nixos-config=/home/tilman/nixos-config/T07LY9i.nix
     fi
 elif [[ $name = "wsl" ]]
 then

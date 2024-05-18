@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }:
 
 let
+  tilpkgs = import <til7701> { };
   cfg = config.til7701.cli-tools;
 in
 {
@@ -19,8 +20,11 @@ in
       bat
       jq
       tldr
-      hyfetch
+      tilpkgs.hyfetch
+      pinentry
     ];
+
+    programs.gnupg.agent.enable = true;
   };
 
 }
