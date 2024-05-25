@@ -2,7 +2,7 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  #tilpkgs = import <til7701> { };
+  tilpkgs = import <til7701> { };
   #schlunzpkgs = import <schlunzis> { };
 in
 {
@@ -10,7 +10,6 @@ in
     ./hosts/T06BQ2/hardware-configuration.nix
     ./hosts/T06BQ2/configuration.nix
     ./til7701-modules/_top-level
-    #<til7701>
   ];
 
   til7701 = {
@@ -68,14 +67,11 @@ in
     rust.enable = false;
 
     latex.enable = true;
-
-    #fx-demo.enable = true;
-    #noel.enable = true;
   };
 
   environment.systemPackages = [
     #tilpkgs.fx-demo
-    #tilpkgs.noel
+    tilpkgs.noel
     #schlunzpkgs.kurtama-client
   ];
 
