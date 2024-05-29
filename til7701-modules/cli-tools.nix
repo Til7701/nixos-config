@@ -22,6 +22,7 @@ in
       tldr
       tilpkgs.hyfetch
       pinentry
+      imagemagick
     ];
 
     programs.gnupg.agent.enable = true;
