@@ -10,7 +10,7 @@ with lib.hm.gvariant;
       disable-user-extensions = false;
       disabled-extensions = [ "launch-new-instance@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "color-picker@tuberry" "date-menu-formatter@marcinjakubowski.github.com" "just-perfection-desktop@just-perfection" "drive-menu@gnome-shell-extensions.gcampax.github.com" "Vitals@CoreCoding.com" "dash-to-dock@micxgx.gmail.com" "clipboard-indicator@tudmotu.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" "firefox.desktop" "org.keepassxc.KeePassXC.desktop" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" "firefox.desktop" "org.keepassxc.KeePassXC.desktop" "thunderbird.desktop" "signal-desktop.desktop" "discord.desktop" "idea-ultimate.desktop" "NixOSConfig.desktop" ];
       last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "44.2";
     };
