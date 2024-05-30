@@ -6,13 +6,18 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "org/gnome/desktop/app-folders" = {
-      folder-children = [ "Utilities" "YaST" "a4f917ff-62c6-4084-9be0-8300b394c10a" "e628d05b-bfae-4092-9826-5cf72df3f0d8" "3c63dcfa-f83a-4e89-be27-cbefdbd011ed" "a5e6e034-ccc3-4182-a50d-24a576a7b844" "9c0b7171-8786-4bfa-9b27-650559aece57" "dd38635b-1f41-417a-9c7c-5b3b4cd8f724" ];
+      folder-children = [ "Utilities" "YaST" "a4f917ff-62c6-4084-9be0-8300b394c10a" "e628d05b-bfae-4092-9826-5cf72df3f0d8" "3c63dcfa-f83a-4e89-be27-cbefdbd011ed" "a5e6e034-ccc3-4182-a50d-24a576a7b844" "9c0b7171-8786-4bfa-9b27-650559aece57" "dd38635b-1f41-417a-9c7c-5b3b4cd8f724" "64330263-016b-441d-a969-55779d9ab2a9" ];
     };
 
     "org/gnome/desktop/app-folders/folders/3c63dcfa-f83a-4e89-be27-cbefdbd011ed" = {
       apps = [ "cups.desktop" "simple-scan.desktop" ];
       name = "Printer Stuff";
       translate = false;
+    };
+
+    "org/gnome/desktop/app-folders/folders/64330263-016b-441d-a969-55779d9ab2a9" = {
+      apps = [ "app.drey.Elastic.desktop" "org.gnome.design.Emblem.desktop" "com.github.finefindus.eyedropper.desktop" "gaphor.desktop" "atomix.desktop" "com.belmoussaoui.Decoder.desktop" "com.belmoussaoui.Obfuscate.desktop" "fr.romainvigier.MetadataCleaner.desktop" "org.gnome.gitlab.YaLTeR.Identity.desktop" "org.gnome.GHex.desktop" "com.github.hugolabe.Wike.desktop" "io.gitlab.adhami3310.Converter.desktop" "com.rafaelmardojai.WebfontKitGenerator.desktop" "io.github.diegoivan.pdf_metadata_editor.desktop" "com.github.alexhuntley.Plots.desktop" "de.schmidhuberj.DieBahn.desktop" "org.gnome.Podcasts.desktop" ];
+      name = "Accessories";
     };
 
     "org/gnome/desktop/app-folders/folders/9c0b7171-8786-4bfa-9b27-650559aece57" = {
@@ -79,6 +84,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/notifications" = {
       application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" ];
       show-banners = true;
+    };
+
+    "org/gnome/desktop/notifications/application/calibre-gui" = {
+      application-id = "calibre-gui.desktop";
     };
 
     "org/gnome/desktop/notifications/application/code" = {
