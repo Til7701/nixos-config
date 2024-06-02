@@ -21,7 +21,7 @@ in
     # Configure keymap in X11
     services.xserver = {
       layout = "de";
-      xkbVariant = "";
+      xkb.variant = "";
     };
 
     home-manager.users.${config.til7701.user} = { pkgs, ... }: {
@@ -52,7 +52,7 @@ in
       elastic
       emblem
       eyedropper
-      gaphor
+      #gaphor build error
       identity
       plots
       wike
