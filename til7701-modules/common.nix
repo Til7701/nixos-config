@@ -37,7 +37,7 @@ in
       ((vim_configurable.override { }).customize {
         name = "vim";
         vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-          start = [ nerdtree nerdtree-git-plugin vim-nerdtree-syntax-highlight vim-nix ];
+          start = [ nerdtree nerdtree-git-plugin vim-nerdtree-syntax-highlight vim-autoformat vim-nix ];
           opt = [ ];
         };
         vimrcConfig.customRC = ''
