@@ -17,7 +17,7 @@ function error_code() {
 
 function git_prompt() {
     if [ -d .git ] || git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-        echo " git$(accent_color): $(git_commits_ahead)$(git_commits_behind)$(default_color)$(git_repo_name) $(accent_color)᚜ $(git_prompt_remote)$(git_prompt_info) $(git_prompt_short_sha)"
+        echo " git$(accent_color): $(git_commits_ahead)$(git_commits_behind)$(default_color)$(git_repo_name) $(accent_color)᚜ $(git_prompt_remote)$(git_current_branch)$(default_color)$(parse_git_dirty) $(git_prompt_short_sha)"
     fi
 }
 
