@@ -19,9 +19,9 @@ in
     services.xserver.desktopManager.gnome.enable = true;
 
     # Configure keymap in X11
-    services.xserver = {
+    services.xserver.xkb = {
       layout = "de";
-      xkb.variant = "";
+      variant = "";
     };
 
     home-manager.users.${config.til7701.user} = { pkgs, ... }: {

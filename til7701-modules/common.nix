@@ -34,7 +34,18 @@ in
 
     environment.systemPackages = with pkgs; [
       git
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      ((vim_configurable.override { }).customize {
+        name = "vim";
+        vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+          start = [ nerdtree nerdtree-git-plugin vim-nerdtree-syntax-highlight vim-nix ];
+          opt = [ ];
+        };
+        vimrcConfig.customRC = ''
+          " Start NERDTree. If a file is specified, move the cursor to its window.
+          autocmd StdinReadPre * let s:std_in=1
+          autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+        '';
+      })
     ];
 
     programs.git.enable = true;
