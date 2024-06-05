@@ -34,7 +34,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/date-menu-formatter" = {
-      pattern = "EEE, y-MM-d  H:mm";
+      pattern = "EEE, y-MM-dd  H:mm";
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
