@@ -30,6 +30,7 @@ in
           signal-desktop
           pdfarranger
           calibre
+          sonic-pi
         ];
       };
     };
