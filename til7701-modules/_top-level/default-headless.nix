@@ -3,9 +3,9 @@
 {
 
   imports = [
+    ../java
     ./default-core.nix
     ../common.nix
-    ../java.nix
     ../cli-tools.nix
   ];
 

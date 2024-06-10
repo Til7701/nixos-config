@@ -28,7 +28,7 @@ in
     matlab-overlay.enable = true;
     gaming.enable = true;
 
-    printing.enable = true;
+    printing.enable = false;
     sound.enable = true;
 
     develop.enable = true;

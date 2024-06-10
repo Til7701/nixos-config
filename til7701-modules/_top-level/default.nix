@@ -5,6 +5,7 @@
   imports = [
     ../firefox
     ../gnome
+    ../java
     ../shortcuts
     ../zsh
     ../android.nix
@@ -14,7 +15,6 @@
     ../desktop-core.nix
     ../develop.nix
     ../gaming.nix
-    ../java.nix
     ../javafx-libs.nix
     ../latex.nix
     ../local.nix

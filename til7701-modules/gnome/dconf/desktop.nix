@@ -166,6 +166,10 @@ with lib.hm.gvariant;
       application-id = "signal-desktop.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/spotify" = {
+      application-id = "spotify.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/thunderbird" = {
       application-id = "thunderbird.desktop";
     };
