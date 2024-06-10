@@ -9,7 +9,7 @@ in
   imports = [
     ./hosts/T07LY9i/hardware-configuration.nix
     ./hosts/T07LY9i/configuration.nix
-    ./til7701-modules/_top-level
+    ./modules/_top-level
     #<til7701>
   ];
 

@@ -3,13 +3,13 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   tilpkgs = import <til7701> { };
-  #schlunzpkgs = import <schlunzis> { };
+  schlunzpkgs = import <schlunzis> { };
 in
 {
   imports = [
     ./hosts/T06BQ2/hardware-configuration.nix
     ./hosts/T06BQ2/configuration.nix
-    ./til7701-modules/_top-level
+    ./modules/_top-level
   ];
 
   til7701 = {
@@ -72,7 +72,7 @@ in
   environment.systemPackages = [
     #tilpkgs.fx-demo
     tilpkgs.noel
-    #schlunzpkgs.kurtama-client
+    schlunzpkgs.kurtama-client
   ];
 
   nix.extraOptions = ''

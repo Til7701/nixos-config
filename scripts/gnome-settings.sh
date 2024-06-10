@@ -8,7 +8,7 @@ directories=(
     "org/gnome/terminal"
 )
 
-output_base="/home/tilman/nixos-config/til7701-modules/gnome/dconf"
+output_base="/home/tilman/nixos-config/modules/gnome/dconf"
 
 for dir in "${directories[@]}"; do
     filename=$(basename "$dir")

@@ -5,7 +5,7 @@ in
 {
   imports = [
     ./hosts/wsl/configuration.nix
-    ./til7701-modules/_top-level/default-headless.nix
+    ./modules/_top-level/default-headless.nix
   ];
 
   til7701 = {
