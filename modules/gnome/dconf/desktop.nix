@@ -82,7 +82,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" ];
+      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" "discord" ];
       show-banners = true;
     };
 
@@ -124,6 +124,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/idea-ultimate" = {
       application-id = "idea-ultimate.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/kurtama" = {
+      application-id = "Kurtama.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-baobab" = {
