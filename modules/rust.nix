@@ -2,7 +2,8 @@
 
 let
   cfg = config.til7701.rust;
-in {
+in
+{
   options.til7701.rust = {
     enable = lib.mkEnableOption "rust";
   };
@@ -20,6 +21,7 @@ in {
       openssl
       pkg-config
     ];
+
     environment.variables = {
       OPENSSL_DIR = "${pkgs.openssl.dev}";
       OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";

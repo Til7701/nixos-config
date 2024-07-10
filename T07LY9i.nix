@@ -64,7 +64,7 @@ in
     };
     javafx-libs.enable = true;
     python.enable = true;
-    rust.enable = false;
+    rust.enable = true;
 
     latex.enable = true;
 
