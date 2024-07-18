@@ -28,6 +28,7 @@ in
             ];
           })
           nixpkgs-fmt
+          eclipses.eclipse-java
         ];
       };
     };
@@ -39,6 +40,7 @@ in
       dpkg # for opening .deb packages, not for installing them
       apt # for testing PPAs and such things, not for installing anything
       fakeroot # jpackage likes this
+      ant
     ];
 
     environment.etc."_til7701/js/node".source = "${pkgs.nodejs}/";
