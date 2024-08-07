@@ -37,24 +37,24 @@ in
       enable = true;
       jdks = {
         jdk22 = {
-          package = unstable.jdk22;
-          priority = 5;
+          package = pkgs.jdk22;
+          priority = 1;
         };
         jdk21 = {
           package = pkgs.jdk21;
-          priority = 1;
+          priority = 2;
         };
         jdk17 = {
           package = pkgs.jdk17;
-          priority = 2;
+          priority = 3;
         };
         jdk-stable = {
           package = pkgs.jdk;
-          priority = 3;
+          priority = 4;
         };
         jdk-unstable = {
           package = unstable.jdk;
-          priority = 4;
+          priority = 9;
         };
         jdk8 = {
           package = pkgs.jdk8;
@@ -84,6 +84,10 @@ in
     tarball-ttl = 0
   '';
   virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
