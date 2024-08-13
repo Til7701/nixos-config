@@ -62,8 +62,13 @@ with lib.hm.gvariant;
       hot-sensors = [ "__temperature_max__" ];
     };
 
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+      locations = [];
+    };
+
     "org/gnome/shell/world-clocks" = {
-      locations = [ ];
+      locations = [];
     };
 
   };

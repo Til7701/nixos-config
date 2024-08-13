@@ -5,6 +5,10 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
+    "org/gnome/desktop/a11y/applications" = {
+      screen-keyboard-enabled = false;
+    };
+
     "org/gnome/desktop/app-folders" = {
       folder-children = [ "Utilities" "YaST" "a4f917ff-62c6-4084-9be0-8300b394c10a" "e628d05b-bfae-4092-9826-5cf72df3f0d8" "3c63dcfa-f83a-4e89-be27-cbefdbd011ed" "a5e6e034-ccc3-4182-a50d-24a576a7b844" "9c0b7171-8786-4bfa-9b27-650559aece57" "dd38635b-1f41-417a-9c7c-5b3b4cd8f724" "64330263-016b-441d-a969-55779d9ab2a9" ];
     };
@@ -79,6 +83,7 @@ with lib.hm.gvariant;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
       show-battery-percentage = true;
+      toolkit-accessibility = false;
     };
 
     "org/gnome/desktop/notifications" = {
@@ -186,6 +191,11 @@ with lib.hm.gvariant;
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
+    };
+
+    "org/gnome/desktop/privacy" = {
+      old-files-age = mkUint32 30;
+      recent-files-max-age = -1;
     };
 
     "org/gnome/desktop/screensaver" = {

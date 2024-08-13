@@ -37,6 +37,7 @@ in
 
     environment.systemPackages = with pkgs; [
       dconf2nix # https://github.com/nix-community/dconf2nix
+      unstable.zenity
 
       gnome.gnome-tweaks
       gnome.ghex

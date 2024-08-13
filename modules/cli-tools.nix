@@ -23,6 +23,8 @@ in
       tilpkgs.hyfetch
       pinentry
       imagemagick
+      gource
+      ffmpeg
     ];
 
     programs.gnupg.agent.enable = true;
