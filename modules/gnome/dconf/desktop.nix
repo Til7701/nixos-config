@@ -87,7 +87,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" "discord" ];
+      application-children = [ "org-gnome-console" "org-gnome-nautilus" "firefox" "thunderbird" "idea-ultimate" "org-gnome-evince" "com-nextcloud-desktopclient-nextcloud" "discord" "signal-desktop" ];
       show-banners = true;
     };
 

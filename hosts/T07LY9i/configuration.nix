@@ -12,7 +12,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = unstable.linuxPackages_6_9;
+  boot.kernelPackages = unstable.linuxPackages_6_10;
 
   # Speaker Pin
   # https://wiki.archlinux.org/title/Lenovo_Yoga_9i_2022_(14AiPI7)
