@@ -48,14 +48,6 @@ in
           package = pkgs.jdk17;
           priority = 3;
         };
-        jdk-stable = {
-          package = pkgs.jdk;
-          priority = 4;
-        };
-        jdk-unstable = {
-          package = unstable.jdk;
-          priority = 9;
-        };
         jdk8 = {
           package = pkgs.jdk8;
           priority = 10;
@@ -64,7 +56,7 @@ in
     };
     javafx-libs.enable = true;
     python.enable = true;
-    rust.enable = true;
+    rust.enable = false;
 
     latex.enable = true;
 

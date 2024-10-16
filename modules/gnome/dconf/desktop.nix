@@ -163,6 +163,10 @@ with lib.hm.gvariant;
       application-id = "org.gnome.Settings.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-zenity" = {
+      application-id = "org.gnome.Zenity.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-keepassxc-keepassxc" = {
       application-id = "org.keepassxc.KeePassXC.desktop";
     };
